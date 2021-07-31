@@ -1,0 +1,659 @@
+/* NAVBAR */
+
+.navContainer img {
+    height: 80px;
+}
+
+.navContainer .navbar-brand {
+    font-size: 20px;
+    font-family: 'Hahmlet', serif;
+    cursor: default;
+}
+.nav-link {
+    font-family: 'Hahmlet', serif;
+    font-size: 16px;
+}
+
+
+
+/* VIDEO */
+.videoWithHouse {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+#videoWithHomeBack {
+    position: absolute;
+    z-index: 1;
+    filter: blur(10px);
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    box-shadow: 0 10px 40px rgb(88, 88, 88);
+}
+
+#videoWithHomeFront {
+    max-width: 1100px;
+    z-index: 2;
+    border-radius: 10px;
+}
+
+.mainVideoOnPage {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.textOnVideo {
+    position: absolute;
+    font-size: 30px;
+    backdrop-filter: blur(40px);
+    color: white;
+    padding: 5px 0px 5px 0px;
+    text-align: center;
+    z-index: 3;
+    border-radius: 10px;
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+/* OUR STATEMENT */
+
+.location {
+    font-family: 'Hahmlet', serif;
+}
+.statement {
+    margin-top: 100px;
+}
+
+.baseBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rectangularBlock {
+    margin-top: 50px;
+    border-radius: 20px;
+    display: inline-block;
+    width: 50%;
+    transition-duration: 5s;
+    /* margin-left: -500px; */
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(150, 184, 240) 100%);
+}
+
+
+
+.rectangularAnimation {
+    /* animation-name: mortgageAnimation; */
+    
+    /* animation-timing-function: ease-in-out;
+    animation-iteration-count:infinite; 
+    animation-direction: alternate; */
+    
+}
+
+.rectangularAnimation:hover {
+    margin-left: 0px;
+}
+
+#nav-home {
+    background-image: url("images/earth.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.mortgageHeader {
+    font-size: 30px;
+    margin-right: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.textOfMortgages {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+
+
+.btnMore {
+    margin-top: 10px;
+    margin-right: 50px;
+    animation-name: slide;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count:infinite; 
+    animation-direction: alternate;
+    border: 1px rgba(0, 0, 0, 0.11) solid !important;
+    width: 150px !important;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btnMore:hover {
+    transition-duration: 0.5s;
+    background-color: black;
+}
+
+
+.btnMore:hover .textMore {
+    display: none;
+}
+.btnMore:hover:after {
+    content: "I'll help you";
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+@keyframes slide {
+    0% {
+        box-shadow: 0 2px 20px rgb(255, 255, 255), 0 2px 5px rgba(226, 228, 117);
+    }
+  
+    33% {
+        box-shadow: none;
+    }
+  
+    66% {
+        box-shadow: 0 2px 20px rgb(255, 255, 255), 0 2px 5px rgba(226, 228, 117);
+    }
+
+    100% {
+        box-shadow: none;
+    }
+  }
+
+
+  .mortgageConditionItems h3 {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .parStyle {
+    color: #56585a;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.mortgageCondition {
+    display: flex;
+    justify-content: space-between;
+}
+
+table {
+    border-collapse: inherit !important;
+    width: 100%;
+    height: 200px;
+}
+
+table h4 {
+    text-align: center;
+}
+
+.tableItem td {
+    vertical-align:top;
+}
+.tableItem1 td {
+    vertical-align:bottom;
+}
+
+.tableText {
+    padding: 0 10px;
+}
+
+.conditionMeaning {
+    color: #56585a;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.mortgageNameWithBtn {
+    display: flex;
+    align-items: center;
+}
+
+
+.mortgageConditionItems {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.conditionImage {
+    width: 250px;
+    border-bottom-right-radius: 20px;
+    height: intrinsic;
+}
+
+
+
+
+
+
+
+
+/* calculate */
+.calculate_header_name {
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+.calculate_items {
+    border: 1px solid #c5c9ce;
+    border-radius: 6px;
+    padding: 5px 30px 0px 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.value_for_calculate {
+    padding: 10px;
+}
+.last_calculate_item {
+    margin-bottom: 0px;
+}
+
+.field_name_for_calculate {
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: #56585a;
+    line-height: 25px;
+    
+}
+
+select, input {
+    font-size: 20px;
+    border: none;
+}
+
+.calculate_block {
+    display: flex;
+    border: 1px solid #c5c9ce;
+    border-radius: 20px;
+    padding: 60px;
+}
+
+.result_block {
+    display: flex;
+    padding: 10px;
+}
+
+.result_items_block {
+    display: flex;
+    flex-direction: column;
+    max-width: 140px;
+}
+
+.result_item {
+    padding: 0px 30px 0px 30px;
+}
+
+.result_name {
+    color: #56585a;
+    font-size: 15px;
+}
+
+.result {
+    font-size: 20px;
+}
+
+.btn_apply {
+    width: 450px;
+}
+
+.apply {
+    position: relative;
+    top: 50%;
+    right: 190%;
+}
+
+/* Additional information */
+
+.additional_header_name {
+    font-size: 30px;
+    margin-top: 50px;
+    padding: 10px;
+}
+
+.last_block {
+    box-shadow: 0 -5px 5px -5px rgba(180, 174, 174, 0.95);
+}
+
+.main_additional_block {
+    display: flex;
+    justify-content: center;
+}
+
+.additionall_block {
+    padding: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.pdf_image {
+    width: 70px;
+    padding: 10px;
+}
+
+/* pnohes */
+.numbers {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    padding: 20px;
+    background-image: url('last_block_photo.jpeg');
+    background-size: 100% ;
+}
+
+.number_block {
+    display: flex;
+}
+
+.numbers_item {
+    padding: 20px;
+    text-align: center;
+}
+
+.phone_number_style {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.number_pharagraph {
+    color: white;
+    font-size: 25px;
+}
+
+.social_network_img {
+    height: 50px;
+    border-radius: 14px;
+    filter: grayscale(100%) opacity(70%);
+}
+
+.social_network_img:hover {
+    transition-duration: 0.8s;
+    filter: none;
+} 
+
+.social_network {
+    display: flex;
+    align-items: center;
+}
+
+
+
+@media all and (max-width: 1100px) {
+    #families_video {
+        width: 800px;
+    }
+}
+
+@media all and (max-width: 800px) {
+    
+    #families_video {
+        width: 90%;
+    }
+
+    .social_network {
+        flex-direction: column;
+    }
+    .number_block {
+        align-items: center;
+    }
+
+    /* additional info */
+
+
+    .main_additional_block {
+        display: block;
+    }
+
+    .documents {
+        font-size: 24px;
+    }
+
+    .menu_items {
+        font-size: 20px;
+        padding: 0px;
+    }
+
+    .additional_header_name {
+        font-size: 25px;
+    }
+
+    .additionall_block {
+        padding: 5px;
+    }
+
+
+    .active_statement {
+        margin-top: 45px;
+    }
+
+
+    /* calculate */
+
+    .calculate_block {
+        padding: 0px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calculate_items {
+        margin-bottom: 10px;
+        padding: none;
+    }
+
+    .calculate_header_name {
+        font-size: 25px;
+    }
+
+    .result_name {
+        font-size: 13px;
+    }
+
+    .result {
+        font-size: 15px;
+    }
+
+    .result_block {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .btn {
+        font-size: 20px;
+        width: 250px;
+    }
+
+
+    .apply {
+        position: inherit;
+        margin-top: 140px;
+        margin-left: -220px;
+    }
+
+    /* services */
+    .service_image {
+        width: 130px;
+    }
+
+    .service_items {
+        padding: 20px;
+        margin: 0px;
+    }
+
+    .service_header {
+        text-align: center;
+    }
+
+    .condition_image {
+        display: none;
+    }
+
+    .mortgage_name_with_btn {
+        justify-content: space-between;
+    }
+
+    .mobile_indoor_block, .text_of_mortgage {
+        width: auto;
+        margin: 20px 20px 0 20px;
+    }
+
+    .even_block {
+        background-color: #f4c7ab;
+    }
+    
+    .odd_block {
+        background-color: #fff5eb;
+    }
+
+    select {
+        background-color: white;
+    }
+}
+
+
+
+@media all and (max-width: 500px) {
+
+/* Additional information: mobile */
+    .documents {
+        font-size: 14px;
+    }
+
+
+
+/*  block of numbers */
+    .phone_number_style {
+        font-size: 15px;
+    }
+
+    .numbers {
+        background-size: 110% ;
+    }
+
+    .social_network_img {
+        filter: none;
+    }
+
+    .number_pharagraph {
+        font-size: 15px;
+    }
+
+    .numbers_item {
+        padding: 0px;
+        margin-left: 20px;
+    }
+
+
+    .social_network_img {
+        height: 40px;
+    }
+
+
+    
+    /* calculate */
+    .apply {
+        position: inherit;
+        margin-top: 30px;
+        margin-left: -50px;
+    }
+
+
+
+    /* mortgage types */
+    .mortgage_header_name {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .mortgage_name_with_btn {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mortgage_condition {
+        margin-top: 15px;
+        padding: 5px;
+    }
+
+    .mortgage_condition_items {
+        margin-top: 0px;
+        padding: 0px;
+    }
+
+    .rectangular_block {
+        margin-top: 20px;
+    }
+
+
+
+/* menu */
+
+    .menu_items {
+        font-size: 13px;
+        padding: 0px;
+    }
+
+    .active_statement {
+        margin-top: 40px;
+    }
+
+    .type_of_mortgage_items {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .mortgage_condition {
+        flex-direction: column;
+    }
+
+    .type_of_mortgage {
+        align-items: flex-start;
+    }
+
+    .condition_meaning, .paragraph_style, 
+    .offer_on_new_year, select, input, 
+    .field_name_for_calculate {
+        font-size: 13px;
+    }
+
+
+    .even_block {
+        background-color: #ffe8df;
+    }
+    
+    .odd_block, input, select {
+        background-color: white;
+    }
+
+    #families_video {
+        max-width: 100%;
+    }
+}
+
+@media all and (max-width: 300px) {
+    .type_of_mortgage_items, .menu_items {
+        font-size: 10px;
+    }
+
+    .value_for_calculate {
+        padding: 10px 5px 10px 5px;
+    }
+}
