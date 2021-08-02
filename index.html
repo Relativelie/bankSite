@@ -58,18 +58,25 @@
 
 
     <!-- VIDEO -->
-    <!-- <div class="mainVideoOnPage">
-            <h3 class="textOnVideo">Is your own home pipe dream? <br> We can to fulfil your wish! </h3>
-            <div class="videoWithHouse">
-                <video  muted loop id="videoWithHomeFront" playsinline>
-                    <source src="images/houseVideo.mp4" type="video/mp4">
-                </video>
-                <video  muted loop id="videoWithHomeBack" playsinline>
-                    <source src="images/houseVideo2.mp4" type="video/mp4">
-                </video>
-            </div>
+    <div class="mainVideoOnPage">
+        <h3 class="textOnVideo">Is your own home pipe dream? <br> We can to fulfil your wish! </h3>
+        <div class="videoWithHouse">
+            <video autoplay muted loop id="videoWithHomeFront" playsinline>
+                <source src="images/video.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop id="videoWithHomeBack" playsinline>
+                <source src="images/video2.mp4" type="video/mp4">
+            </video>
+        </div>
 
-        </div> -->
+    </div>
+
+
+
+
+
+
+
 
 
 
@@ -117,17 +124,17 @@
             <button class="nav-link location" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
                 type="button" role="tab" aria-controls="nav-profile" aria-selected="false">House on Mars</button>
             <button class="nav-link location" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
-                type="button" role="tab" aria-controls="nav-contact" aria-selected="false">House on Jupiter</button>
-            <button class="nav-link location" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-other"
-                type="button" role="tab" aria-controls="nav-contact" aria-selected="false">House on Universe</button>
+                type="button" role="tab" aria-controls="nav-contact" aria-selected="false">House on Venus</button>
+            <button class="nav-link location" id="nav-universe-tab" data-bs-toggle="tab" data-bs-target="#nav-universe"
+                type="button" role="tab" aria-controls="nav-universe" aria-selected="false">House on Universe</button>
         </div>
     </nav>
     <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
-            <div class="baseBlock earthBlock">
+            <div class="baseBlock">
 
-                <div class="rectangularBlock mobile_indoor_block">
+                <div class="rectangularBlock mobile_indoor_block earth">
 
                     <div class="mortgageNameWithBtn">
                         <h3 class="mortgageHeader textOfMortgages mobile_header_name">Conventional mortgages</h3>
@@ -150,7 +157,7 @@
                                 <td class="tableText">
                                     <h4>use how you want</h4>
                                 </td>
-                                <td rowspan="3"><img class="conditionImage" src="images/earthHouse2.jpg"
+                                <td rowspan="3"><img class="conditionImage" src="images/earthHouse.png"
                                         alt="house photo"></td>
                             </tr>
                             <tr class="tableItem">
@@ -172,7 +179,7 @@
                 </div>
 
 
-                <div class="rectangularBlock mobile_indoor_block rectangularAnimation">
+                <div class="rectangularBlock mobile_indoor_block  earth">
 
                     <div class="mortgageNameWithBtn">
                         <h3 class="mortgageHeader textOfMortgages mobile_header_name">Government-insured mortgages</h3>
@@ -195,7 +202,7 @@
                                 <td class="tableText col-4">
                                     <h4>great</h4>
                                 </td>
-                                <td rowspan="3"><img class="conditionImage" src="images/earthHouse3.jpg"
+                                <td rowspan="3"><img class="conditionImage" src="images/earthHouse2.png"
                                         alt="house photo"></td>
                             </tr>
                             <tr class="tableItem">
@@ -215,10 +222,11 @@
                 </div>
 
 
-                <div class="rectangularBlock mobile_indoor_block">
+                <div class="rectangularBlock mobile_indoor_block earth lastItem">
 
                     <div class="mortgageNameWithBtn">
-                        <h3 class="mortgageHeader textOfMortgages mobile_header_name">Adjustable-rate mortgages</h3>
+                        <h3 class="mortgageHeader textOfMortgages mobile_header_name lastItem">Adjustable-rate mortgages
+                        </h3>
                         <a href="mailto:sopio1992@gmail.com"><button class="btn btnMore"><span class="textMore">More
                                     details</span></button></a>
                     </div>
@@ -239,7 +247,7 @@
                                 <td class="tableText">
                                     <h4>10/1 ARM</h4>
                                 </td>
-                                <td rowspan="3"><img class="conditionImage" src="images/earthHouse.jpg"
+                                <td rowspan="3"><img class="conditionImage" src="images/earthHouse3.png"
                                         alt="house photo"></td>
                             </tr>
                             <tr class="tableItem">
@@ -258,247 +266,349 @@
                     </div>
                 </div>
 
-        </div>
-
-    </div>
-    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-        <div class="base_block ">
-
-            <div class="rectangularBlock mobile_indoor_block" id="convential_mortgares">
-
-                <div class="mortgage_name_with_btn">
-                    <h3 class="mortgageHeader textOfMortgages mobile_header_name">Conventional mortgages</h3>
-                    <a href="mailto:sopio1992@gmail.com"><button class="btn">More details</button></a>
-                </div>
-
-                <p class="textOfMortgages conditionMeaning">Can be used for your primary home or vacation or
-                    investment
-                    priority</p>
-
-                <div class="textOfMortgages">
-
-                    <div class="mortgageCondition">
-                        <div class="mortgageConditionItems">
-                            <h3>as little as 3% down</h3>
-                            <p class="parStyle ">you can pay on loans backed by Fannie Mae or
-                                Freddie Mac</p>
-                        </div>
-
-                        <div class="mortgageConditionItems">
-                            <h3>cancel PMI</h3>
-                            <p class="parStyle ">once you’ve reached 20 percent equity</p>
-                        </div>
-
-                        <div class="mortgageConditionItems">
-                            <h3>use how you want</h3>
-                            <p class="parStyle ">for a primary home, second home or investment
-                                property</p>
-                        </div>
-
-                        <img class="conditionImage" src="house_photo.jpeg" alt="house photo">
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="rectangularBlock mobile_indoor_block">
-
-                <div class="mortgage_name_with_btn" id="government-insured">
-                    <h3 class="mortgageHeader textOfMortgages mobile_header_name">Government-insured mortgages</h3>
-                    <a href="mailto:sopio1992@gmail.com"><button class="btn">More details</button></a>
-                </div>
-
-                <p class="textOfMortgages conditionMeaning">Available through the FHA, VA and USDA, these make
-                    homeownership more accessible for qualified borrowers.</p>
-
-                <div class="textOfMortgages">
-
-                    <div class="mortgageCondition">
-                        <div class="mortgageConditionItems">
-                            <h3>only 3.5% down</h3>
-                            <p class="parStyle ">payment requirements</p>
-                        </div>
-
-                        <div class="mortgageConditionItems">
-                            <h3>only a 580</h3>
-                            <p class="parStyle ">credit score</p>
-                        </div>
-
-                        <div class="mortgageConditionItems">
-                            <h3>great</h3>
-                            <p class="parStyle ">interest rates</p>
-                        </div>
-
-                        <img class="conditionImage" src="house_photo2.jpeg" alt="house photo">
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="rectangularBlock mobile_indoor_block">
-
-                <div class="mortgage_name_with_btn" id="adjustable-rate">
-                    <h3 class="mortgageHeader textOfMortgages mobile_header_name">Adjustable-rate mortgages</h3>
-                    <a href="mailto:sopio1992@gmail.com"><button class="btn">More details</button></a>
-                </div>
-
-                <p class="textOfMortgages conditionMeaning">The option ARM, or pick-a-pay mortgage, is a monthly
-                    adjustable rate mortgage tied to one of the major mortgage indexes, including the LIBOR, MTA, or
-                    COFI.
-                </p>
-
-                <div class="textOfMortgages">
-
-                    <div class="mortgageCondition">
-                        <div class="mortgageConditionItems">
-                            <h3>30-year</h3>
-                            <p class="parStyle ">interest rate fixed for full 30-year term</p>
-                        </div>
-
-                        <div class="mortgageConditionItems">
-                            <h3>10-year</h3>
-                            <p class="parStyle ">interest rate is fixed entire time</p>
-                        </div>
-
-                        <div class="mortgageConditionItems">
-                            <h3>10/1 ARM</h3>
-                            <p class="parStyle ">fixed for 10 years, variable for 20</p>
-                        </div>
-
-                        <img class="conditionImage" src="house_photo4.jpeg" alt="house photo">
-                    </div>
-
-                </div>
-
             </div>
 
         </div>
 
-    </div>
-    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <div class="base_block ">
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <div class="baseBlock">
 
-            <div class="rectangularBlock mobile_indoor_block" id="convential_mortgares">
 
-                <div class="mortgage_name_with_btn">
-                    <h3 class="mortgageHeader textOfMortgages mobile_header_name">Conventional mortgages</h3>
-                    <a href="mailto:sopio1992@gmail.com"><button class="btn">More details</button></a>
-                </div>
+                <div class="rectangularBlock mobile_indoor_block mars">
 
-                <p class="textOfMortgages conditionMeaning">Can be used for your primary home or vacation or
-                    investment
-                    priority</p>
-
-                <div class="textOfMortgages">
-
-                    <div class="mortgageCondition">
-                        <div class="mortgageConditionItems">
-                            <h3>as little as 3% down</h3>
-                            <p class="parStyle ">you can pay on loans backed by Fannie Mae or
-                                Freddie Mac</p>
-                        </div>
-
-                        <div class="mortgageConditionItems">
-                            <h3>cancel PMI</h3>
-                            <p class="parStyle ">once you’ve reached 20 percent equity</p>
-                        </div>
-
-                        <div class="mortgageConditionItems">
-                            <h3>use how you want</h3>
-                            <p class="parStyle ">for a primary home, second home or investment
-                                property</p>
-                        </div>
-
-                        <img class="conditionImage" src="house_photo.jpeg" alt="house photo">
+                    <div class="mortgageNameWithBtn">
+                        <h3 class="mortgageHeader textOfMortgages mobile_header_name">Elon Musk's mortgages</h3>
+                        <a href="mailto:sopio1992@gmail.com"><button class="btn btnMore"><span class="textMore">More
+                                    details</span></button></a>
                     </div>
 
-                </div>
-
-            </div>
-
-            <div class="rectangularBlock mobile_indoor_block">
-
-                <div class="mortgage_name_with_btn" id="government-insured">
-                    <h3 class="mortgageHeader textOfMortgages mobile_header_name">Government-insured mortgages</h3>
-                    <a href="mailto:sopio1992@gmail.com"><button class="btn">More details</button></a>
-                </div>
-
-                <p class="textOfMortgages conditionMeaning">Available through the FHA, VA and USDA, these make
-                    homeownership more accessible for qualified borrowers.</p>
-
-                <div class="textOfMortgages">
+                    <p class="textOfMortgages conditionMeaning">Can be used for your primary home or vacation or
+                        investment
+                        priority</p>
 
                     <div class="mortgageCondition">
-                        <div class="mortgageConditionItems">
-                            <h3>only 3.5% down</h3>
-                            <p class="parStyle ">payment requirements</p>
-                        </div>
+                        <table cellspacing="0" cellpadding="0">
+                            <tr class="tableItem1">
+                                <td class="tableText">
+                                    <h4>as little as 2% down</h4>
+                                </td>
+                                <td class="tableText">
+                                    <h4>cancel PMI</h4>
+                                </td>
+                                <td class="tableText">
+                                    <h4>use how you want</h4>
+                                </td>
+                                <td rowspan="3"><img class="conditionImage" src="images/house_photo2.png"
+                                        alt="house photo"></td>
+                            </tr>
+                            <tr class="tableItem">
+                                <td class="tableText">
+                                    <p class="parStyle">you can pay on loans backed by Elon Musk</p>
+                                </td>
+                                <td class="tableText">
+                                    <p class="parStyle">once you’ve reached 15 percent equity</p>
+                                </td>
+                                <td class="tableText">
+                                    <p class="parStyle">for a primary home, second home or investment
+                                        property</p>
+                                </td>
+                            </tr>
+                        </table>
 
-                        <div class="mortgageConditionItems">
-                            <h3>only a 580</h3>
-                            <p class="parStyle ">credit score</p>
-                        </div>
+                    </div>
+                </div>
 
-                        <div class="mortgageConditionItems">
-                            <h3>great</h3>
-                            <p class="parStyle ">interest rates</p>
-                        </div>
 
-                        <img class="conditionImage" src="house_photo2.jpeg" alt="house photo">
+
+                <div class="rectangularBlock mobile_indoor_block mars">
+
+                    <div class="mortgageNameWithBtn">
+                        <h3 class="mortgageHeader textOfMortgages mobile_header_name">Government-insured mortgages</h3>
+                        <a href="mailto:sopio1992@gmail.com"><button class="btn btnMore"><span class="textMore">More
+                                    details</span></button></a>
                     </div>
 
-                </div>
-
-            </div>
-
-            <div class="rectangularBlock mobile_indoor_block">
-
-                <div class="mortgage_name_with_btn" id="adjustable-rate">
-                    <h3 class="mortgageHeader textOfMortgages mobile_header_name">Adjustable-rate mortgages</h3>
-                    <a href="mailto:sopio1992@gmail.com"><button class="btn">More details</button></a>
-                </div>
-
-                <p class="textOfMortgages conditionMeaning">The option ARM, or pick-a-pay mortgage, is a monthly
-                    adjustable rate mortgage tied to one of the major mortgage indexes, including the LIBOR, MTA, or
-                    COFI.
-                </p>
-
-                <div class="textOfMortgages">
+                    <p class="textOfMortgages conditionMeaning">If you have citizenship of Mars, you may get
+                        support from the state</p>
 
                     <div class="mortgageCondition">
-                        <div class="mortgageConditionItems">
-                            <h3>30-year</h3>
-                            <p class="parStyle ">interest rate fixed for full 30-year term</p>
-                        </div>
+                        <table cellspacing="0" cellpadding="0">
+                            <tr class="tableItem1">
+                                <td class="tableText">
+                                    <h4>only 3.5% down</h4>
+                                </td>
+                                <td class="tableText">
+                                    <h4>only a 580</h4>
+                                </td>
+                                <td class="tableText">
+                                    <h4>great</h4>
+                                </td>
+                                <td rowspan="3"><img class="conditionImage" src="images/house_photo.png"
+                                        alt="house photo"></td>
+                            </tr>
+                            <tr class="tableItem">
+                                <td class="tableText">
+                                    <p class="parStyle">payment requirements</p>
+                                </td>
+                                <td class="tableText">
+                                    <p class="parStyle">credit score</p>
+                                </td>
+                                <td class="tableText">
+                                    <p class="parStyle">interest rates</p>
+                                </td>
+                            </tr>
+                        </table>
 
-                        <div class="mortgageConditionItems">
-                            <h3>10-year</h3>
-                            <p class="parStyle ">interest rate is fixed entire time</p>
-                        </div>
+                    </div>
+                </div>
 
-                        <div class="mortgageConditionItems">
-                            <h3>10/1 ARM</h3>
-                            <p class="parStyle ">fixed for 10 years, variable for 20</p>
-                        </div>
 
-                        <img class="conditionImage" src="house_photo4.jpeg" alt="house photo">
+                <div class="rectangularBlock mobile_indoor_block mars lastItem">
+
+                    <div class="mortgageNameWithBtn">
+                        <h3 class="mortgageHeader textOfMortgages mobile_header_name">Sanctification Siberia of Mars
+                        </h3>
+                        <a href="mailto:sopio1992@gmail.com"><button class="btn btnMore"><span class="textMore">More
+                                    details</span></button></a>
                     </div>
 
+                    <p class="textOfMortgages conditionMeaning">If you don't affraid the cold, this motgages will liked
+                        by
+                        you</p>
+
+                    <div class="mortgageCondition">
+                        <table cellspacing="0" cellpadding="0">
+                            <tr class="tableItem1">
+                                <td class="tableText">
+                                    <h4>only 1.5% down</h4>
+                                </td>
+                                <td class="tableText">
+                                    <h4>only a 380</h4>
+                                </td>
+                                <td class="tableText">
+                                    <h4>great</h4>
+                                </td>
+                                <td rowspan="3"><img class="conditionImage" src="images/housephoto7.png"
+                                        alt="house photo"></td>
+                            </tr>
+                            <tr class="tableItem">
+                                <td class="tableText">
+                                    <p class="parStyle">payment requirements</p>
+                                </td>
+                                <td class="tableText">
+                                    <p class="parStyle">credit score</p>
+                                </td>
+                                <td class="tableText">
+                                    <p class="parStyle">interest rates</p>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
                 </div>
+
+
+
 
             </div>
 
         </div>
+
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+            <div class="baseBlock">
+
+
+                <div class="rectangularBlock mobile_indoor_block venus">
+
+                    <div class="mortgageNameWithBtn">
+                        <h3 class="mortgageHeader textOfMortgages mobile_header_name"> X Æ A-12 Musk's mortgages</h3>
+                        <a href="mailto:sopio1992@gmail.com"><button class="btn btnMore"><span class="textMore">More
+                                    details</span></button></a>
+                    </div>
+
+                    <p class="textOfMortgages conditionMeaning">Can be used for your primary home or vacation or
+                        investment
+                        priority</p>
+
+                    <div class="mortgageCondition">
+                        <table cellspacing="0" cellpadding="0">
+                            <tr class="tableItem1">
+                                <td class="tableText">
+                                    <h4>as little as 2% down</h4>
+                                </td>
+                                <td class="tableText">
+                                    <h4>cancel PMI</h4>
+                                </td>
+                                <td class="tableText">
+                                    <h4>use how you want</h4>
+                                </td>
+                                <td rowspan="3"><img class="conditionImage" src="images/house5.png" alt="house photo">
+                                </td>
+                            </tr>
+                            <tr class="tableItem">
+                                <td class="tableText">
+                                    <p class="parStyle">you can pay on loans backed by X Æ A-12 Musk</p>
+                                </td>
+                                <td class="tableText">
+                                    <p class="parStyle">once you’ve reached 15 percent equity</p>
+                                </td>
+                                <td class="tableText">
+                                    <p class="parStyle">for a primary home, second home or investment
+                                        property</p>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+
+
+
+                <div class="rectangularBlock mobile_indoor_block venus">
+
+                    <div class="mortgageNameWithBtn">
+                        <h3 class="mortgageHeader textOfMortgages mobile_header_name">Government-insured mortgages</h3>
+                        <a href="mailto:sopio1992@gmail.com"><button class="btn btnMore"><span class="textMore">More
+                                    details</span></button></a>
+                    </div>
+
+                    <p class="textOfMortgages conditionMeaning">If you have citizenship of Venus, you may get
+                        support from the state</p>
+
+                    <div class="mortgageCondition">
+                        <table cellspacing="0" cellpadding="0">
+                            <tr class="tableItem1">
+                                <td class="tableText">
+                                    <h4>only 3.5% down</h4>
+                                </td>
+                                <td class="tableText">
+                                    <h4>only a 580</h4>
+                                </td>
+                                <td class="tableText">
+                                    <h4>great</h4>
+                                </td>
+                                <td rowspan="3"><img class="conditionImage" src="images/housephoto8.png"
+                                        alt="house photo"></td>
+                            </tr>
+                            <tr class="tableItem">
+                                <td class="tableText">
+                                    <p class="parStyle">payment requirements</p>
+                                </td>
+                                <td class="tableText">
+                                    <p class="parStyle">credit score</p>
+                                </td>
+                                <td class="tableText">
+                                    <p class="parStyle">interest rates</p>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+
+
+                <div class="rectangularBlock mobile_indoor_block venus lastItem">
+
+                    <div class="mortgageNameWithBtn">
+                        <h3 class="mortgageHeader textOfMortgages mobile_header_name">Sanctification Desert of Venus
+                        </h3>
+                        <a href="mailto:sopio1992@gmail.com"><button class="btn btnMore"><span class="textMore">More
+                                    details</span></button></a>
+                    </div>
+
+                    <p class="textOfMortgages conditionMeaning">If you don't affraid the heat, this motgages will liked
+                        by
+                        you</p>
+
+                    <div class="mortgageCondition">
+                        <table cellspacing="0" cellpadding="0">
+                            <tr class="tableItem1">
+                                <td class="tableText">
+                                    <h4>only 1.5% down</h4>
+                                </td>
+                                <td class="tableText">
+                                    <h4>only a 380</h4>
+                                </td>
+                                <td class="tableText">
+                                    <h4>great</h4>
+                                </td>
+                                <td rowspan="3"><img class="conditionImage" src="images/housephoto10.png"
+                                        alt="house photo"></td>
+                            </tr>
+                            <tr class="tableItem">
+                                <td class="tableText">
+                                    <p class="parStyle">payment requirements</p>
+                                </td>
+                                <td class="tableText">
+                                    <p class="parStyle">credit score</p>
+                                </td>
+                                <td class="tableText">
+                                    <p class="parStyle">interest rates</p>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="nav-universe" role="tabpanel" aria-labelledby="nav-universe-tab">
+            <div class="baseBlock">
+
+
+                <div class="rectangularBlock mobile_indoor_block lastItem universe">
+
+                    <div class="mortgageNameWithBtn">
+                        <h3 class="mortgageHeader textOfMortgages mobile_header_name"> Mortgages of other universe</h3>
+                        <a href="mailto:sopio1992@gmail.com"><button class="btn btnMore"><span class="textMore">More
+                                    details</span></button></a>
+                    </div>
+
+                    <p class="textOfMortgages conditionMeaning">This mortgage under development. But you may invest on
+                        your future now!</p>
+
+                    <div class="mortgageCondition">
+                        <table cellspacing="0" cellpadding="0">
+                            <tr class="tableItem1">
+                                <td class="tableText">
+                                    <h4>as little as 1% down</h4>
+                                </td>
+                                <td class="tableText">
+                                    <h4>cancel PMI</h4>
+                                </td>
+                                <td class="tableText">
+                                    <h4>use how you want</h4>
+                                </td>
+                                <td rowspan="3"><img class="conditionImage" src="images/house10.png" alt="house photo">
+                                </td>
+                            </tr>
+                            <tr class="tableItem">
+                                <td class="tableText">
+                                    <p class="parStyle">you can pay on loans backed by Musk's Family</p>
+                                </td>
+                                <td class="tableText">
+                                    <p class="parStyle">once you’ve reached 15 percent equity</p>
+                                </td>
+                                <td class="tableText">
+                                    <p class="parStyle">for a primary home, second home or investment
+                                        property</p>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-    </div>
 
 
 
 
 
-    <div class="base_block odd_block">
+    <div class="baseBlock">
 
         <div class="odd_block">
             <h3 class="calculate_header_name" id="calculate">Calculate your mortgage</h3>
@@ -509,27 +619,31 @@
                     <form class="value_for_calculate">
 
                         <div class="calculate_items">
-                            <label class="field_name_for_calculate">Type of mortgage</label>
+                            <label class="field_name_for_calculate">Choose location</label>
                             <select>
-                                <option>Government-insured mortgages</option>
-                                <option>Conventional mortgages</option>
-                                <option>Adjustable-rate mortgages</option>
+                                <option>Earth</option>
+                                <option>Mars</option>
+                                <option>Venus</option>
+                                <option>Universe</option>
                             </select>
                         </div>
 
                         <div class="calculate_items">
                             <label class="field_name_for_calculate">The cost, $</label>
-                            <input value="130 000">
+                            <input type="range" class="form-range" min="5000" max="50000" id="cost" step="500">
+                            <input class="showCostValue" value="15000" number="amount">
                         </div>
 
                         <div class="calculate_items">
                             <label class="field_name_for_calculate">An initial fee, $</label>
-                            <input value="50 000">
+                            <input type="range" class="form-range" min="500" max = "14000" id="initialFee" step="500">
+                            <input class="showInitialFeeValue" value = "14000" number="amount">
                         </div>
 
                         <div class="calculate_items last_calculate_item">
                             <label class="field_name_for_calculate">Mortgage term, years</label>
-                            <input value="20">
+                            <input type="range" class="form-range" min="10" max="30" id="mortgageTerm" step="1">
+                            <input class="showMortgageTermValue" value="20" number="amount">
                         </div>
 
                     </form>
@@ -649,33 +763,7 @@
     </div>
     </div>
 
-
-
-    <div class="aboutUsBlock">
-        <div class="d-flex align-items-start aboutUs">
-            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
-                    data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
-                    aria-selected="true">
-                    Home</button>
-                <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
-                    data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
-                    aria-selected="false">Profile</button>
-                <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill"
-                    data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
-                    aria-selected="false">Messages</button>
-            </div>
-            <div class="tab-content" id="v-pills-tabContent">
-                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
-                    aria-labelledby="v-pills-home-tab">Online form from distant places of the universe</div>
-                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                    Easy control: online with your chip on brain</div>
-                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                    Quick approval: you won't eat your breakfast!</div>
-            </div>
-        </div>
-    </div>
-</body>
-<script src="script.js"></script>
+    
+    <script src="script.js"></script>
 
 </html>
