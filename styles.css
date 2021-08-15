@@ -3,63 +3,58 @@
     height: 80px;
 }
 
-.navContainer .navbar-brand {
+.bank_name {
     font-size: 20px;
     font-family: 'Hahmlet', serif;
     cursor: default;
+    color: #fff !important;
 }
-.nav-link {
+.bank_products .nav-link {
     font-family: 'Hahmlet', serif;
+    color: #fff !important;
     font-size: 16px;
 }
 
-
+.menu {
+    z-index: 1;
+}
 
 /* VIDEO */
-.videoWithHouse {
-    display: flex;
-    justify-content: center;
-    margin-top: 80px;
-    align-items: center;
-    width: 100%;
-    position: relative;
-    height: 600px;
-}
-
-#videoWithHomeBack {
-    position: absolute;
-    z-index: 1;
-    filter: blur(10px);
-    width: 100%;
-    height: 700px;
-    object-fit: cover;
-    box-shadow: 0 10px 40px rgb(88, 88, 88);
-}
-
-#videoWithHomeFront {
-    max-width: 1100px;
-    z-index: 2;
-    border-radius: 10px;
-}
 
 .mainVideoOnPage {
+    height: 550px;
+}
+
+.videoWithHouse {
+    position: absolute;
+    top: -100px;
+    height: 750px;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+
+.myText {
+    position: absolute;
+    width: 100%;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    z-index: 2;
 }
 
 .textOnVideo {
-    position: absolute;
     font-size: 30px;
     backdrop-filter: blur(40px);
     color: white;
     padding: 5px 0px 5px 0px;
     text-align: center;
-    z-index: 3;
     border-radius: 10px;
-    padding: 5px;
+    padding: 15px;
     font-family: 'Roboto', sans-serif;
-}
+} 
 
 
 
@@ -98,17 +93,10 @@
       transform: scale(1);
     }
   }
-
-.nav-tabs {
-    margin-bottom: 5px !important;
-}
-
+  /* end of code with stars */
 
 .location {
     font-family: 'Hahmlet', serif;
-}
-.statement {
-    margin-top: 100px;
 }
 
 .baseBlock {
@@ -143,11 +131,41 @@
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgb(148, 89, 116) 100%);
 }
 
+#nav-tabContent {
+    position: relative;
+}
+
+#nav-home-tab {
+    color:rgb(150, 184, 240);
+    font-family: 'Hahmlet', serif;
+}
+
+#nav-profile-tab {
+    color:rgb(214, 96, 50);
+    font-family: 'Hahmlet', serif;
+}
+
+#nav-contact-tab {
+    color:rgb(179, 133, 74);
+    font-family: 'Hahmlet', serif;
+}
+
+#nav-universe-tab {
+    color: rgb(172, 123, 145);
+    font-family: 'Hahmlet', serif;
+}
+
+.active.location {
+    color:rgb(92, 92, 92) !important;
+    font-family: 'Hahmlet', serif;
+}
+
 #nav-tabContent .tab-pane {
-    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    transform:translatez(0);
+    -webkit-transform:translatez(0);
 }
 
 #nav-home {
@@ -182,7 +200,6 @@
     margin-left: 20px;
     margin-top: 10px;
 }
-
 
 .btnMore {
     margin-top: 10px;
@@ -310,7 +327,7 @@ table h4 {
     margin-top: 50px;
 }
 
-.calculate_items {
+.calculateItems {
     border: 1px solid #c5c9ce;
     border-radius: 6px;
     padding: 5px 30px 0px 30px;
@@ -326,7 +343,7 @@ table h4 {
     margin-bottom: 0px;
 }
 
-.field_name_for_calculate {
+.fieldNameForCalculate {
     font-size: 15px;
     margin-bottom: 5px;
     color: #56585a;
@@ -346,12 +363,12 @@ select, input {
     padding: 60px;
 }
 
-.result_block {
+.resultBlock {
     display: flex;
     padding: 10px;
 }
 
-.result_items_block {
+.resultItemsBlock {
     display: flex;
     flex-direction: column;
     max-width: 140px;
@@ -361,7 +378,7 @@ select, input {
     padding: 0px 30px 0px 30px;
 }
 
-.result_name {
+.resultName {
     color: #56585a;
     font-size: 15px;
 }
@@ -370,7 +387,7 @@ select, input {
     font-size: 20px;
 }
 
-.btn_apply {
+.btnApply {
     width: 450px;
 }
 
@@ -408,53 +425,94 @@ select, input {
     padding: 10px;
 }
 
-/* pnohes */
-.numbers {
+/* FOOTER */
+
+.footer {
+    background-color: rgb(29, 29, 29);
+    box-shadow: 0 0 10px rgb(14, 13, 13);
+}
+
+.contactInfo {
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 20px;
+    justify-content: space-around;
     padding: 20px;
-    background-image: url('last_block_photo.jpeg');
     background-size: 100% ;
 }
 
-.number_block {
+.numbers {
     display: flex;
 }
 
-.numbers_item {
-    padding: 20px;
+.numbersItem {
+    padding: 25px;
     text-align: center;
 }
 
-.phone_number_style {
-    color: white;
+.phoneNumberStyle {
+    color: #fff;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 20px;
 }
 
-.number_pharagraph {
+.numberPar {
     color: white;
-    font-size: 25px;
+    font-size: 15px;
 }
 
-.social_network_img {
+.socialNetworkItem {
+    padding: 15px;
+}
+
+.socialNetworkItemImg {
     height: 50px;
     border-radius: 14px;
     filter: grayscale(100%) opacity(70%);
 }
 
-.social_network_img:hover {
-    transition-duration: 0.8s;
+.socialNetworkItemImg:hover {
     filter: none;
 } 
 
-.social_network {
+.socialNetwork {
     display: flex;
     align-items: center;
 }
 
+.contactMe {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 30px;
+}
 
+
+.contactMeBlock {
+    display: flex;
+    justify-content: center;
+}
+
+.contactMeLink {
+    margin-left: 5px;
+}
+
+
+@keyframes emergense {
+    0% {
+        text-shadow: 0 0 140px rgba(226, 228, 117);
+    }
+  
+    33% {
+        text-shadow: none;
+    }
+  
+    66% {
+        text-shadow: 0 0 140px rgba(226, 228, 117);
+    }
+
+    100% {
+        text-shadow: none;
+    }
+  }
 
 @media all and (max-width: 1100px) {
     #families_video {
@@ -513,7 +571,7 @@ select, input {
         align-items: center;
     }
 
-    .calculate_items {
+    .calculateItems {
         margin-bottom: 10px;
         padding: none;
     }
@@ -522,7 +580,7 @@ select, input {
         font-size: 25px;
     }
 
-    .result_name {
+    .resultName {
         font-size: 13px;
     }
 
@@ -530,7 +588,7 @@ select, input {
         font-size: 15px;
     }
 
-    .result_block {
+    .resultBlock {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -690,7 +748,7 @@ select, input {
 
     .condition_meaning, .paragraph_style, 
     .offer_on_new_year, select, input, 
-    .field_name_for_calculate {
+    .fieldNameForCalculate {
         font-size: 13px;
     }
 

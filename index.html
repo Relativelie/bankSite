@@ -21,11 +21,16 @@
 
 <body>
 
+
+
+
+
+
     <!-- MENU -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg menu">
         <div class="container-fluid">
             <div class="navContainer">
-                <a class="navbar-brand" href="#">Bank Of Future</a>
+                <a class="navbar-brand bank_name" href="#">Bank Of Future</a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -33,7 +38,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 bank_products">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Cards</a>
                     </li>
@@ -54,25 +59,25 @@
                 </form>
             </div>
         </div>
+
     </nav>
+
 
 
     <!-- VIDEO -->
     <div class="mainVideoOnPage">
-        <h3 class="textOnVideo">Is your own home pipe dream? <br> We can to fulfil your wish! </h3>
+        <div class="myText">
+
+
+            <h3 class="textOnVideo">Is your own home pipe dream? <br> We can to fulfil your wish! </h3>
+        </div>
         <div class="videoWithHouse">
             <video autoplay muted loop id="videoWithHomeFront" playsinline>
-                <source src="images/video.mp4" type="video/mp4">
-            </video>
-            <video autoplay muted loop id="videoWithHomeBack" playsinline>
-                <source src="images/video2.mp4" type="video/mp4">
+                <source src="images/city.mp4" type="video/mp4">
             </video>
         </div>
 
     </div>
-
-
-
 
 
 
@@ -618,74 +623,74 @@
                 <div class="calculate_block">
                     <form class="value_for_calculate">
 
-                        <div class="calculate_items">
-                            <label class="field_name_for_calculate">Choose location</label>
-                            <select>
-                                <option>Earth</option>
-                                <option>Mars</option>
-                                <option>Venus</option>
-                                <option>Universe</option>
+                        <div class="calculateItems">
+                            <label class="fieldNameForCalculate">Choose location</label>
+                            <select class="locationTaxes">
+                                <option value="earth">Earth</option>
+                                <option value="mars">Mars</option>
+                                <option value="venus">Venus</option>
+                                <option value="universe">Universe</option>
                             </select>
                         </div>
 
-                        <div class="calculate_items">
-                            <label class="field_name_for_calculate">The cost, $</label>
-                            <input type="range" class="form-range" min="5000" max="50000" id="cost" step="500">
-                            <input class="showCostValue" value="15000" number="amount">
+                        <div class="calculateItems">
+                            <label class="fieldNameForCalculate">The cost, $</label>
+                            <input type="range" class="form-range" min="5000" max="2000000" id="cost" step="100" value="250000">
+                            <input class="showCostValue" value="250 000" number="amount">
                         </div>
 
-                        <div class="calculate_items">
-                            <label class="field_name_for_calculate">An initial fee, $</label>
-                            <input type="range" class="form-range" min="500" max = "14000" id="initialFee" step="500">
-                            <input class="showInitialFeeValue" value = "14000" number="amount">
+                        <div class="calculateItems">
+                            <label class="fieldNameForCalculate">An initial fee, $</label>
+                            <input type="range" class="form-range" min="500" max="1999500" id="initialFee" step="100" value="100000">
+                            <input class="showInitialFeeValue" value="100 000" number="amount">
                         </div>
 
-                        <div class="calculate_items last_calculate_item">
-                            <label class="field_name_for_calculate">Mortgage term, years</label>
+                        <div class="calculateItems last_calculate_item">
+                            <label class="fieldNameForCalculate">Mortgage term, years</label>
                             <input type="range" class="form-range" min="10" max="30" id="mortgageTerm" step="1">
                             <input class="showMortgageTermValue" value="20" number="amount">
                         </div>
 
                     </form>
 
-                    <div class=result_block>
-                        <div class="result_items_block">
+                    <div class=resultBlock>
+                        <div class="resultItemsBlock">
 
-                            <div class=result_item>
-                                <p class="result_name">Monthly payment</p>
-                                <p class="result">count$</p>
+                            <div class=resultItem>
+                                <p class="resultName">Monthly payment</p>
+                                <p class="result monthlyPayment">$</p>
                             </div>
 
-                            <div class=result_item>
-                                <p class="result_name">Interest rate</p>
-                                <p class="result">count%</p>
-                            </div>
-
-                        </div>
-
-                        <div class="result_items_block">
-
-                            <div class=result_item>
-                                <p class="result_name">Credit amount</p>
-                                <p class="result">count$</p>
-                            </div>
-
-                            <div class=result_item>
-                                <p class="result_name">Tax deduction</p>
-                                <p class="result">count%</p>
+                            <div class=resultItem>
+                                <p class="resultName">Interest rate</p>
+                                <p class="result interestRate">%</p>
                             </div>
 
                         </div>
 
-                        <div class="result_items_block">
+                        <div class="resultItemsBlock">
 
-                            <div class=result_item>
-                                <p class="result_name">Necessary income</p>
-                                <p class="result">count$</p>
+                            <div class=resultItem>
+                                <p class="resultName">Credit amount</p>
+                                <p class="result creditAmount">$</p>
+                            </div>
+
+                            <div class=resultItem>
+                                <p class="resultName">Purchase tax </p>
+                                <p class="result taxDeduction">%</p>
+                            </div>
+
+                        </div>
+
+                        <div class="resultItemsBlock">
+
+                            <div class=resultItem>
+                                <p class="resultName">Necessary income</p>
+                                <p class="result necessaryIncome">$</p>
                             </div>
 
                             <div class="apply">
-                                <button class="btn btn_apply">Apply</button>
+                                <button class="btn btnApply">Apply</button>
                             </div>
 
                         </div>
@@ -696,7 +701,7 @@
         </div>
     </div>
 
-    <div class="last_block ">
+    <!-- <div class="last_block ">
         <h3 class="additional_header_name">Additional information</h3>
 
         <div class="mobile_additional_info">
@@ -724,46 +729,52 @@
             </div>
 
         </div>
-    </div>
+    </div> -->
 
-    <div class="numbers">
+    <div class="footer">
+        <div class="contactInfo">
 
 
-        <div class="social_network">
-            <a class="menu_items" href="#">
-                <img class="social_network_img" src="facebook.png" alt="facebook icon">
-            </a>
+            <div class="numbers">
 
-            <a class="menu_items" href="#">
-                <img class="social_network_img" src="telega.png" alt="telegram icon">
-            </a>
+                <div class="numbersItem">
+                    <a href="tel: +000000000" class="phoneNumberStyle">+000 000 000</a>
+                    <p class="numberPar">Free for Kanada </p>
+                </div>
 
-            <a class="menu_items" href="#">
-                <img class="social_network_img" src="insta.png" alt="insta png">
-            </a>
-            <a class="menu_items" href="#">
-                <img class="social_network_img" src="vk.png" alt="vk icon">
-            </a>
-        </div>
+                <div class="numbersItem">
+                    <a href="tel: +000000000" class="phoneNumberStyle">+000 000 000</a>
+                    <p class="numberPar">For calls from abroad</p>
+                </div>
 
-        <div class="number_block">
-
-            <div class="numbers_item">
-                <a href="tel: +000000000" class="phone_number_style">+000 000 000</a>
-                <p class="number_pharagraph">Free for Kanada </p>
             </div>
 
-            <div class="numbers_item">
-                <a href="tel: +000000000" class="phone_number_style">+000 000 000</a>
-                <p class="number_pharagraph">For calls from abroad</p>
+            <div class="socialNetwork">
+                <a class="socialNetworkItem" href="#">
+                    <img class="socialNetworkItemImg" src="facebook.png" alt="facebook icon">
+                </a>
+
+                <a class="socialNetworkItem" href="https://t.me/OnePunchOnBug">
+                    <img class="socialNetworkItemImg" src="telega.png" alt="telegram icon">
+                </a>
+
+                <a class="socialNetworkItem" href="#">
+                    <img class="socialNetworkItemImg" src="insta.png" alt="insta png">
+                </a>
+                <a class="socialNetworkItem" href="#">
+                    <img class="socialNetworkItemImg" src="vk.png" alt="vk icon">
+                </a>
             </div>
 
         </div>
+        <div class="contactMeBlock">
+        <p class="contactMe"></p>
+        <a class="contactMeLink" href="https://t.me/OnePunchOnBug"> </a>
     </div>
     </div>
     </div>
 
-    
+
     <script src="script.js"></script>
 
 </html>
