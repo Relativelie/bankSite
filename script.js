@@ -75,18 +75,20 @@ const showInitialFeeValue = document.querySelector(".showInitialFeeValue");
 const mortgageTerm = document.querySelector("#mortgageTerm");
 const showMortgageTermValue = document.querySelector(".showMortgageTermValue");
 
-
+// range block for front
 costRange.addEventListener("input", changeCostValue);
 costRange.addEventListener("click", changeMaxInitialFeeValue);
 
+
+
 function changeCostValue() {
     let costValue = costRange.value;
-    showCostValue.value = new Intl.NumberFormat('ru-RU').format(costValue);
+    // convert to local format
+    showCostValue.value = costValue.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
 };
 
 function changeMaxInitialFeeValue() {
-    let costValue = costRange.value;
-    initialFeeRange.max = costValue - 1000;
+    initialFeeRange.max = parseInt(showCostValue.value.replaceAll(' ','')) - 1000;
     changeInitialFeeValue();
 }
 
@@ -104,23 +106,24 @@ function changeMortgageTermValue() {
 }
 mortgageTerm.addEventListener("input", changeMortgageTermValue);
 
-// calculations
+
 // taxes is depended on place
+// interest rate
+// interest rate for calculate monthly payment
+
 const applyButton = document.querySelector(".btnApply");
 let creditAmount;
 let creditPercent;
 let necessaryIncomeValue;
 
+
 function interestRate() {
 
-    let difCostAndInitialFee = costRange.value - initialFeeRange.value;
-    let locationTaxes = document.querySelector(".locationTaxes");
-
-
-    console.log(locationTaxes.value);
+    let difCostAndInitialFee = parseInt(showCostValue.value.replaceAll(' ','')) - parseInt(showInitialFeeValue.value.replaceAll(' ',''));
+    let locationTaxes = document.querySelector(".locationTaxes").value;
 
     
-    if (document.querySelector(".calculateItems option").value === "earth") {
+    if (locationTaxes === "earth") {
         if (difCostAndInitialFee < 80000) {
             creditPercent = 5.5;
         }
@@ -132,7 +135,7 @@ function interestRate() {
         else creditPercent = 3;
     }
 
-    else if (document.querySelector(".calculateItems option").value === "mars") {
+    else if (locationTaxes === "mars") {
         if (difCostAndInitialFee < 80000) {
             creditPercent = 5;
         }
@@ -144,19 +147,19 @@ function interestRate() {
         else creditPercent = 2.5;
     }
 
-    else if (document.querySelector(".calculateItems option").value === "venus") {
+    else if (locationTaxes === "venus") {
         if (difCostAndInitialFee < 80000) {
             creditPercent = 3.5;
         }
     
-        else if (difCostAndInitialFee > 80000 && difCostAndInitialFee < 130000) {
+        else if (locationTaxes < 130000) {
             creditPercent = 3;
         }
     
         else creditPercent = 2.5;
     }
 
-    else if (document.querySelector(".calculateItems option").value === "universe") {
+    else if (locationTaxes === "universe") {
         if (difCostAndInitialFee < 80000) {
             creditPercent = 3;
         }
@@ -171,11 +174,14 @@ function interestRate() {
 }
 
 
-
+// calculations
+// value for front
 applyButton.addEventListener("click", calculations);
 
 function calculations() {
-    creditAmount = new Intl.NumberFormat('ru-RU').format(costRange.value - initialFeeRange.value);
+
+
+    creditAmount = new Intl.NumberFormat('ru-RU').format(parseInt(showCostValue.value.replaceAll(' ','')) - parseInt(showInitialFeeValue.value.replaceAll(' ','')));
     document.querySelector(".creditAmount").textContent = `${creditAmount}$`;
 
     interestRate();
@@ -189,6 +195,7 @@ function calculations() {
     document.querySelector(".necessaryIncome").textContent = `${necessaryIncomeValue}$`;
 }
 
+// calculations for monthly payment
 let monthlyRate;
 let generalRate;
 let monthlyPaymentValue;
@@ -197,9 +204,8 @@ let monthlyPaymentValue;
 function monthlyPayment() {
     interestRate();
     monthlyRate = creditPercent / 12 / 100;
-    console.log(creditPercent);
     generalRate = (1 + monthlyRate) ^ (mortgageTerm.value * 12);
-    monthlyPaymentValue = (costRange.value * monthlyRate * generalRate / (generalRate - 1)).toFixed(2);
+    monthlyPaymentValue = (parseInt(showCostValue.value.replaceAll(' ','')) * monthlyRate * generalRate / (generalRate - 1)).toFixed(2);
 }
 
 
