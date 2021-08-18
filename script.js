@@ -8,7 +8,6 @@ videoOnPage.playbackRate = 0.7;
 
 // show items one by one
 const mortgageBlock = document.querySelectorAll('.rectangularBlock');
-let numberOfTimes
 
 function showTypesOfMortgages() {
     let i = 0;
@@ -88,7 +87,7 @@ function changeCostValue() {
 };
 
 function changeMaxInitialFeeValue() {
-    initialFeeRange.max = parseInt(showCostValue.value.replaceAll(' ','')) - 1000;
+    initialFeeRange.max = parseInt(showCostValue.value.replaceAll(' ', '')) - 2000;
     changeInitialFeeValue();
 }
 
@@ -97,12 +96,12 @@ initialFeeRange.addEventListener("input", changeInitialFeeValue);
 
 function changeInitialFeeValue() {
     let initialFeeValue = initialFeeRange.value;
-    showInitialFeeValue.value = new Intl.NumberFormat('ru-RU').format(initialFeeValue);
+    showInitialFeeValue.value = initialFeeValue.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
 };
 
 function changeMortgageTermValue() {
     let mortgageTermValue = mortgageTerm.value;
-    showMortgageTermValue.value = new Intl.NumberFormat('ru-RU').format(mortgageTermValue);
+    showMortgageTermValue.value = mortgageTermValue.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');;
 }
 mortgageTerm.addEventListener("input", changeMortgageTermValue);
 
@@ -111,27 +110,24 @@ mortgageTerm.addEventListener("input", changeMortgageTermValue);
 // interest rate
 // interest rate for calculate monthly payment
 
-const applyButton = document.querySelector(".btnApply");
-let creditAmount;
-let creditPercent;
-let necessaryIncomeValue;
-
 
 function interestRate() {
 
-    let difCostAndInitialFee = parseInt(showCostValue.value.replaceAll(' ','')) - parseInt(showInitialFeeValue.value.replaceAll(' ',''));
+    let creditPercent;
+
+    let difCostAndInitialFee = parseInt(showCostValue.value.replaceAll(' ', '')) - parseInt(showInitialFeeValue.value.replaceAll(' ', ''));
     let locationTaxes = document.querySelector(".locationTaxes").value;
 
-    
+
     if (locationTaxes === "earth") {
         if (difCostAndInitialFee < 80000) {
             creditPercent = 5.5;
         }
-    
+
         else if (difCostAndInitialFee > 80000 && difCostAndInitialFee < 130000) {
             creditPercent = 4.5;
         }
-    
+
         else creditPercent = 3;
     }
 
@@ -139,11 +135,11 @@ function interestRate() {
         if (difCostAndInitialFee < 80000) {
             creditPercent = 5;
         }
-    
+
         else if (difCostAndInitialFee > 80000 && difCostAndInitialFee < 130000) {
             creditPercent = 4;
         }
-    
+
         else creditPercent = 2.5;
     }
 
@@ -151,11 +147,11 @@ function interestRate() {
         if (difCostAndInitialFee < 80000) {
             creditPercent = 3.5;
         }
-    
+
         else if (locationTaxes < 130000) {
             creditPercent = 3;
         }
-    
+
         else creditPercent = 2.5;
     }
 
@@ -163,49 +159,66 @@ function interestRate() {
         if (difCostAndInitialFee < 80000) {
             creditPercent = 3;
         }
-    
+
         else if (difCostAndInitialFee > 80000 && difCostAndInitialFee < 130000) {
             creditPercent = 2.5;
         }
-    
+
         else creditPercent = 2;
     }
+    return creditPercent;
 
 }
 
+function splitToTriads(value) {
+    return value.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
+}
 
-// calculations
+// animate value
+function animatedValue(value, id) {
+    let incrementValue = Math.floor(value/100);
+    let currentValue = 0;
+    let i = 100;
+
+    let obj = document.querySelector(id);
+    let timer = setInterval(function () {
+        currentValue += incrementValue;
+        obj.textContent = `$${splitToTriads(currentValue)}`;
+        i--;
+        if (i == 0) {
+            obj.textContent = `$${splitToTriads(value)}`;
+            clearInterval(timer);
+        }
+    }, 3)
+}
+
 // value for front
-applyButton.addEventListener("click", calculations);
+// applyButton.addEventListener("click", calculations);
+costRange.addEventListener("click", calculations);
+initialFeeRange.addEventListener("click", calculations);
+mortgageTerm.addEventListener("click", calculations);
 
 function calculations() {
 
+    let creditAmount = parseInt(showCostValue.value.replaceAll(' ', '')) - parseInt(showInitialFeeValue.value.replaceAll(' ', ''));
+    animatedValue(creditAmount, ".creditAmount");
 
-    creditAmount = new Intl.NumberFormat('ru-RU').format(parseInt(showCostValue.value.replaceAll(' ','')) - parseInt(showInitialFeeValue.value.replaceAll(' ','')));
-    document.querySelector(".creditAmount").textContent = `${creditAmount}$`;
+    document.querySelector(".interestRate").textContent = `${interestRate()}%`;
 
-    interestRate();
-    document.querySelector(".interestRate").textContent = `${creditPercent}%`;
-
-    monthlyPayment();
-    document.querySelector(".monthlyPayment").textContent = `${monthlyPaymentValue}$`;
+    animatedValue(monthlyPayment(), ".monthlyPayment");
 
 
-    necessaryIncomeValue = (parseInt(monthlyPaymentValue) + parseInt(monthlyPaymentValue) * 0.4/0.6).toFixed(2);
-    document.querySelector(".necessaryIncome").textContent = `${necessaryIncomeValue}$`;
+    let necessaryIncomeValue = (parseInt(monthlyPayment()) + parseInt(monthlyPayment()) * 0.4 / 0.6).toFixed(0);
+    animatedValue(necessaryIncomeValue, ".necessaryIncome");
 }
 
 // calculations for monthly payment
-let monthlyRate;
-let generalRate;
-let monthlyPaymentValue;
-
-
 function monthlyPayment() {
-    interestRate();
-    monthlyRate = creditPercent / 12 / 100;
-    generalRate = (1 + monthlyRate) ^ (mortgageTerm.value * 12);
-    monthlyPaymentValue = (parseInt(showCostValue.value.replaceAll(' ','')) * monthlyRate * generalRate / (generalRate - 1)).toFixed(2);
+    ;
+    let monthlyRate = interestRate() / 12 / 100;
+    let generalRate = (1 + monthlyRate) ^ (mortgageTerm.value * 12);
+    let monthlyPaymentValue = (parseInt(showCostValue.value.replaceAll(' ', '')) * monthlyRate * generalRate / (generalRate - 1)).toFixed(0);
+    return monthlyPaymentValue
 }
 
 

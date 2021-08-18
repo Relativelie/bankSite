@@ -74,6 +74,7 @@
 
 .stars {
     width: 25%;
+    overflow: hidden;
 }
 
 
@@ -133,6 +134,7 @@
 
 #nav-tabContent {
     position: relative;
+    box-shadow: 0 0 10px black;
 }
 
 #nav-home-tab {
@@ -261,6 +263,7 @@
     font-size: 15px;
     font-family: 'Roboto', sans-serif;
     text-align: center;
+    padding: 10px;
 }
 
 .mortgageCondition {
@@ -322,9 +325,10 @@ table h4 {
 
 
 /* calculate */
-.calculate_header_name {
+.calculateHeaderName {
     font-size: 30px;
     margin-top: 50px;
+    font-family: 'Hahmlet', serif;
 }
 
 .calculateItems {
@@ -356,15 +360,15 @@ select, input {
     border: none;
 }
 
-.calculate_block {
+.calculateBlock {
     display: flex;
     border: 1px solid #c5c9ce;
     border-radius: 20px;
     padding: 60px;
+    margin-bottom: 50px;
 }
 
 .resultBlock {
-    display: flex;
     padding: 10px;
 }
 
@@ -389,13 +393,10 @@ select, input {
 
 .btnApply {
     width: 450px;
+    background-color: #56585a;
 }
 
-.apply {
-    position: relative;
-    top: 50%;
-    right: 190%;
-}
+
 
 /* Additional information */
 
