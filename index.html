@@ -624,33 +624,37 @@
                     <form class="value_for_calculate">
 
                         <div class="calculateItems">
-                            <label class="fieldNameForCalculate">Choose location</label>
-                            <select class="locationTaxes">
-                                <option value="earth">Earth</option>
-                                <option value="mars">Mars</option>
-                                <option value="venus">Venus</option>
-                                <option value="universe">Universe</option>
-                            </select>
+                            <div class="calculateItem">
+                                <label class="fieldNameForCalculate">Choose location</label>
+                                <select class="locationTaxes">
+                                    <option value="earth">Earth</option>
+                                    <option value="mars">Mars</option>
+                                    <option value="venus">Venus</option>
+                                    <option value="universe">Universe</option>
+                                </select>
+                            </div>
+
                         </div>
 
-                        <div class="calculateItems">
+                        <div class="calculateItems" id="costBlock">
+
                             <label class="fieldNameForCalculate">The cost, $</label>
-                            <input type="range" class="form-range" min="5000" max="2000000" id="cost" step="100"
+                            <input class="showCostValue inputCalculateValue" value="250 000" pattern="[0-9]+">
+                            <input type="range" class="form-range" min="35000" max="2000000" id="cost" step="100"
                                 value="250000">
-                            <input class="showCostValue" value="250 000" number="amount">
                         </div>
 
-                        <div class="calculateItems">
+                        <div class="calculateItems" id="initialFeeBlock">
                             <label class="fieldNameForCalculate">An initial fee, $</label>
-                            <input type="range" class="form-range" min="3000" max="248000" id="initialFee" step="100"
-                                value="100000">
-                            <input class="showInitialFeeValue" value="100 000" number="amount">
+                            <input class="showInitialFeeValue inputCalculateValue" value="100 000">
+                            <input type="range" class="form-range" min="1000" max="248000" id="initialFee" step="100"
+                            value="100000">
                         </div>
 
-                        <div class="calculateItems last_calculate_item">
+                        <div class="calculateItems last_calculate_item" id="termBlock">
                             <label class="fieldNameForCalculate">Mortgage term, years</label>
+                            <input class="showMortgageTermValue inputCalculateValue" type="number" value="20">
                             <input type="range" class="form-range" min="10" max="30" id="mortgageTerm" step="1">
-                            <input class="showMortgageTermValue" value="20" number="amount">
                         </div>
 
                     </form>

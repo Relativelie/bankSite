@@ -1,8 +1,6 @@
 // VIDEO
 const videoOnPage = document.querySelector("video");
-
 videoOnPage.playbackRate = 0.7;
-
 
 
 
@@ -26,7 +24,7 @@ let observer = new IntersectionObserver(function (e) {
         showTypesOfMortgages();
         observer.disconnect();
     }
-}, { threshold: [0.4] });
+}, { threshold: [0.33] });
 
 observer.observe(document.querySelector(".baseBlock"));
 
@@ -75,41 +73,44 @@ const mortgageTerm = document.querySelector("#mortgageTerm");
 const showMortgageTermValue = document.querySelector(".showMortgageTermValue");
 
 // range block for front
-costRange.addEventListener("input", changeCostValue);
-costRange.addEventListener("click", changeMaxInitialFeeValue);
+costRange.addEventListener("input", changeCostValueWhenChangeRange);
+showCostValue.addEventListener("input", changeCostValueWhenChangeInput);
 
 
+function changeCostValueWhenChangeInput() {
+        let costInputValue = showCostValue.value.replaceAll(' ', '');
+        costInputValue = parseInt(costInputValue);
+        costRange.value = costInputValue;
+    }
 
-function changeCostValue() {
+function changeCostValueWhenChangeRange() {
     let costValue = costRange.value;
     // convert to local format
     showCostValue.value = costValue.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
 };
 
 function changeMaxInitialFeeValue() {
-    initialFeeRange.max = parseInt(showCostValue.value.replaceAll(' ', '')) - 2000;
-    changeInitialFeeValue();
+    initialFeeRange.max = parseInt(showCostValue.value.replaceAll(' ', '')) - 25000;
+    changeInitialFeeValueWhenChangeRange();
 }
 
 
-initialFeeRange.addEventListener("input", changeInitialFeeValue);
+initialFeeRange.addEventListener("input", changeInitialFeeValueWhenChangeRange);
 
-function changeInitialFeeValue() {
+function changeInitialFeeValueWhenChangeRange() {
     let initialFeeValue = initialFeeRange.value;
     showInitialFeeValue.value = initialFeeValue.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
 };
 
-function changeMortgageTermValue() {
+function changeMortgageTermValueWhenChangeRange() {
     let mortgageTermValue = mortgageTerm.value;
     showMortgageTermValue.value = mortgageTermValue.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');;
 }
-mortgageTerm.addEventListener("input", changeMortgageTermValue);
-
+mortgageTerm.addEventListener("input", changeMortgageTermValueWhenChangeRange);
 
 // taxes is depended on place
 // interest rate
 // interest rate for calculate monthly payment
-
 
 function interestRate() {
 
@@ -170,13 +171,14 @@ function interestRate() {
 
 }
 
+// split value to triads
 function splitToTriads(value) {
     return value.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
 }
 
 // animate value
 function animatedValue(value, id) {
-    let incrementValue = Math.floor(value/100);
+    let incrementValue = Math.floor(value / 100);
     let currentValue = 0;
     let i = 100;
 
@@ -192,36 +194,147 @@ function animatedValue(value, id) {
     }, 3)
 }
 
-// value for front
-// applyButton.addEventListener("click", calculations);
+
+// value from the front
 costRange.addEventListener("click", calculations);
 initialFeeRange.addEventListener("click", calculations);
 mortgageTerm.addEventListener("click", calculations);
+showCostValue.addEventListener("input", calculations);
+showInitialFeeValue.addEventListener("input", calculations);
+showMortgageTermValue.addEventListener("input", calculations);
 
-function calculations() {
 
+// adding all of value on the calculator(with restrictions)
+function calculations(e) {
+
+
+    
+    if (e.target.classList[0] != "form-range") {
+        if (!validationValueOnStrAndLength(e)) {
+            return;
+        }
+        if (!validationOnMinValue()) {
+            return;
+        }
+    }
+
+    changeMaxInitialFeeValue();
     let creditAmount = parseInt(showCostValue.value.replaceAll(' ', '')) - parseInt(showInitialFeeValue.value.replaceAll(' ', ''));
     animatedValue(creditAmount, ".creditAmount");
+
 
     document.querySelector(".interestRate").textContent = `${interestRate()}%`;
 
     animatedValue(monthlyPayment(), ".monthlyPayment");
 
-
     let necessaryIncomeValue = (parseInt(monthlyPayment()) + parseInt(monthlyPayment()) * 0.4 / 0.6).toFixed(0);
     animatedValue(necessaryIncomeValue, ".necessaryIncome");
 }
 
-// calculations for monthly payment
-function monthlyPayment() {
-    ;
-    let monthlyRate = interestRate() / 12 / 100;
-    let generalRate = (1 + monthlyRate) ^ (mortgageTerm.value * 12);
-    let monthlyPaymentValue = (parseInt(showCostValue.value.replaceAll(' ', '')) * monthlyRate * generalRate / (generalRate - 1)).toFixed(0);
-    return monthlyPaymentValue
+
+function validationOnMinValue() {
+
+    if (parseInt(showCostValue.value.replaceAll(' ', '')) >= 35000) {
+        removeBorderColor("#costBlock", "redBorder");
+    }
+
+    if (showInitialFeeValue.value.replaceAll(' ', '') > 999) {
+        removeBorderColor("#initialFeeBlock", "redBorder");
+    }
+
+    if (showMortgageTermValue.value >= 10) {
+        removeBorderColor("#termBlock", "redBorder");
+    }
+
+    if (parseInt(showCostValue.value.replaceAll(' ', '')) >= 35000 && showInitialFeeValue.value.replaceAll(' ', '') >= 999 && showMortgageTermValue.value >= 10) {
+        return true;
+    }
+
+    else {
+        if (parseInt(showCostValue.value.replaceAll(' ', '')) < 35000) {
+            changeBorderColor("#costBlock", "redBorder");
+        }
+
+        if (showInitialFeeValue.value.replaceAll(' ', '') < 999) {
+            changeBorderColor("#initialFeeBlock", "redBorder");
+        }
+
+        if (showMortgageTermValue.value < 10) {
+            changeBorderColor("#termBlock", "redBorder");
+        }
+    }
+
+    return false
 }
 
+function validationValueOnStrAndLength(e) {
 
+    if (e.target.classList[0] === "showCostValue") {
+        if (document.querySelector(`.${e.target.classList[0]}`).value.replaceAll(' ', '').length <= 7) {
+            if (validationValueOnStr(e)) {
+                return true;
+            }
+        }
+        else {
+            deleteLastCharacter(e);
+        }
+    }
+
+    if (e.target.classList[0] === "showInitialFeeValue") {
+
+        if (parseInt(document.querySelector(`.${e.target.classList[0]}`).value.replaceAll(' ', '')) < parseInt(showCostValue.value.replaceAll(' ', ''))) {
+            if (validationValueOnStr(e)) {
+                return true;
+            }
+        }
+        else {
+            deleteLastCharacter(e);
+        }
+    }
+    if (e.target.classList[0] === "showMortgageTermValue") {
+        if (parseInt(document.querySelector(`.${e.target.classList[0]}`).value.replaceAll(' ', '')) <= 30) {
+            if (validationValueOnStr(e)) {
+                return true;
+            }
+        }
+        else {
+            deleteLastCharacter(e);
+        }
+    }
+    return false;
+}
+
+function deleteLastCharacter(e) {
+    document.querySelector(`.${e.target.classList[0]}`).value = document.querySelector(`.${e.target.classList[0]}`).value.substr(0, document.querySelector(`.${e.target.classList[0]}`).value.length - 1);
+}
+
+function validationValueOnStr(e) {
+    if (isNaN(document.querySelector(`.${e.target.classList[0]}`).value.substr(document.querySelector(`.${e.target.classList[0]}`).value.length - 1)) === false) {
+        return true;
+    }
+
+    else {
+        document.querySelector(`.${e.target.classList[0]}`).value = document.querySelector(`.${e.target.classList[0]}`).value.substr(0, document.querySelector(`.${e.target.classList[0]}`).value.length - 1);
+    }
+}
+// add red border 
+function changeBorderColor(id, className) {
+    document.querySelector(id).classList.add(className);
+}
+
+function removeBorderColor(id, className) {
+    document.querySelector(id).classList.remove(className);
+}
+
+// calculations for monthly payment
+function monthlyPayment() {
+
+    let monthlyRate = interestRate() / (12 * 100);
+    let creditSum = parseInt(showCostValue.value.replaceAll(' ', '')) - parseInt(showInitialFeeValue.value.replaceAll(' ', ''));
+    let coefficient = (monthlyRate * ((1 + monthlyRate) ^ (mortgageTerm.value * 12))) / (((1 + monthlyRate) ^ (mortgageTerm.value * 12)) - 1);
+    let monthlyPaymentValue = (coefficient * creditSum).toFixed(0);
+    return monthlyPaymentValue
+}
 
 // CONTACT ME
 const contactMe = document.querySelector('.contactMe');
@@ -231,7 +344,6 @@ const textOfContact = ["If you like my site, you may contact me in ", "telegram"
 
 function showContactText(currentContactMe, item) {
     let i = 0;
-    let lettersLeft = textOfContact[item].length;
 
     let contactMeInterval = setInterval(function () {
         currentContactMe.textContent += textOfContact[item][i];

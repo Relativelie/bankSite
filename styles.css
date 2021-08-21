@@ -111,9 +111,10 @@
     border-radius: 20px;
     display: inline-block;
     width: 50%;
-    transition-duration: 2s;
-    margin-left: -2500px;
+    transition-duration: 1.2s;
+    margin-left: -3000px;
     z-index: 3;
+    overflow: hidden;
 }
 
 .earth {
@@ -334,10 +335,14 @@ table h4 {
 .calculateItems {
     border: 1px solid #c5c9ce;
     border-radius: 6px;
-    padding: 5px 30px 0px 30px;
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
+    transition: all 0.5s ease;
+}
+
+.redBorder {
+    border: 1px solid rgb(184, 11, 11) !important;
 }
 
 .value_for_calculate {
@@ -348,15 +353,15 @@ table h4 {
 }
 
 .fieldNameForCalculate {
-    font-size: 15px;
-    margin-bottom: 5px;
+    font-size: 16px;
     color: #56585a;
     line-height: 25px;
-    
+    position: absolute;
+    transform: scale(.75) translateY(4px);
+
 }
 
 select, input {
-    font-size: 20px;
     border: none;
 }
 
@@ -387,13 +392,53 @@ select, input {
     font-size: 15px;
 }
 
-.result {
-    font-size: 20px;
+.locationTaxes {
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    z-index: 2;
+    width: 378px;
+    height: 50px;
+    font-size: large;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 15px;
 }
 
-.btnApply {
-    width: 450px;
-    background-color: #56585a;
+.calculateItem {
+    position: relative;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+.inputCalculateValue {
+    width: 100%;
+    height: 60px;
+    cursor: pointer;
+    padding-top: 20px;
+    padding-left: 20px;
+    font-size: large;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 30px;
+}
+
+.form-range {
+    height: 0 !important;
+}
+
+.calculateItems:hover {
+    border:1px solid rgb(47, 45, 45)
+}
+
+/* remove arrows on input type=number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
 
