@@ -202,13 +202,12 @@ mortgageTerm.addEventListener("click", calculations);
 showCostValue.addEventListener("input", calculations);
 showInitialFeeValue.addEventListener("input", calculations);
 showMortgageTermValue.addEventListener("input", calculations);
+document.querySelector('.locationTaxes').onchange = calculateMortgageValues;
 
 
 // adding all of value on the calculator(with restrictions)
 function calculations(e) {
 
-
-    
     if (e.target.classList[0] != "form-range") {
         if (!validationValueOnStrAndLength(e)) {
             return;
@@ -217,7 +216,11 @@ function calculations(e) {
             return;
         }
     }
+    calculateMortgageValues();
 
+}
+
+function calculateMortgageValues() {
     changeMaxInitialFeeValue();
     let creditAmount = parseInt(showCostValue.value.replaceAll(' ', '')) - parseInt(showInitialFeeValue.value.replaceAll(' ', ''));
     animatedValue(creditAmount, ".creditAmount");
@@ -230,7 +233,6 @@ function calculations(e) {
     let necessaryIncomeValue = (parseInt(monthlyPayment()) + parseInt(monthlyPayment()) * 0.4 / 0.6).toFixed(0);
     animatedValue(necessaryIncomeValue, ".necessaryIncome");
 }
-
 
 function validationOnMinValue() {
 
