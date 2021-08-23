@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesInvestment.css">
+</head>
+
+<body>
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-lg menu">
+        <div class="container-fluid">
+            <div class="navContainer">
+                <a class="navbar-brand bank_name" href="#">Bank Of Future</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 bank_products">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Cards</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Contribution</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Loan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Mortgage</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="investments.html">Investment</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+
+    </nav>
+
+
+    <!-- statements -->
+    <div id="investmentCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#investmentCarousel" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#investmentCarousel" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#investmentCarousel" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="openAccount">
+                    <div class="forBlur">
+                        <h2>Investing with Bank of Feature</h2>
+                        <h4>Open your own brokerage account for 5 minute</h4>
+                        <button class="btnOnPage btnWithAnimation">Open account</button>
+                    </div>
+
+                </div>
+                <img src="imagesForInvestment/openAccount.jpg" class="d-block w-100" alt="openAccount">
+
+            </div>
+            <!-- <div class="carousel-item">
+        <img src="imagesForInvestment/openAccount.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="imagesForInvestment/openAccount.jpg" class="d-block w-100" alt="...">
+      </div> -->
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#investmentCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#investmentCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <!-- test -->
+    <div class="testBlockWithImage">
+
+        <img class="testImage" src="imagesForInvestment/manWithSuite.png" alt="man with suite">
+        <div class="testBlock">
+
+
+            <div class="test">
+                
+                    <h3 class="testBlockName">What’s Your Investing Style?</h3>
+                    <div class="questionBlock">
+                    <h5 class="question">How long have you been investing?</h5>
+                    <p class="nuberOfQuestion">/10</p>
+                </div>
+                </div>
+
+                <form class="testForm">
+                    <div>
+                        <input id="answerOne" type="radio" name="answer">
+                        <label class="answers" for="answerOne">I haven’t started yet</label>
+                    </div>
+                    <div>
+                        <input id="answerTwo" type="radio" name="answer">
+                        <label class="answers" for="answerTwo">For a while now</label>
+                    </div>
+                    <div>
+                        <input id="answerThree" type="radio" name="answer">
+                        <label class="answers" for="answerThree">A long, long time</label>
+                    </div>
+                    <div class="testButtons">
+                        <button class="back">Back</button>
+                        <button class="btnOnPage continue">Continue</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="contactInfo">
+
+
+            <div class="numbers">
+
+                <div class="numbersItem">
+                    <a href="tel: +000000000" class="phoneNumberStyle">+000 000 000</a>
+                    <p class="numberPar">Free for Kanada </p>
+                </div>
+
+                <div class="numbersItem">
+                    <a href="tel: +000000000" class="phoneNumberStyle">+000 000 000</a>
+                    <p class="numberPar">For calls from abroad</p>
+                </div>
+
+            </div>
+
+            <div class="socialNetwork">
+                <a class="socialNetworkItem" href="#">
+                    <img class="socialNetworkItemImg" src="facebook.png" alt="facebook icon">
+                </a>
+
+                <a class="socialNetworkItem" href="https://t.me/OnePunchOnBug">
+                    <img class="socialNetworkItemImg" src="telega.png" alt="telegram icon">
+                </a>
+
+                <a class="socialNetworkItem" href="#">
+                    <img class="socialNetworkItemImg" src="insta.png" alt="insta png">
+                </a>
+                <a class="socialNetworkItem" href="#">
+                    <img class="socialNetworkItemImg" src="vk.png" alt="vk icon">
+                </a>
+            </div>
+
+        </div>
+        <div class="contactMeBlock">
+            <p class="contactMe"></p>
+            <a class="contactMeLink" href="https://t.me/OnePunchOnBug"> </a>
+        </div>
+    </div>
+
+
+
+
+    <script type="module" src="investmentscript.js"></script>
+</body>
+</html>

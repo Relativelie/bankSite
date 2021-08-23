@@ -369,4 +369,4 @@ let showContactTextObserver = new IntersectionObserver(function (e) {
 showContactTextObserver.observe(document.querySelector(".footer"));
 
 
-
+// export {showContactTextObserver};

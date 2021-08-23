@@ -1,0 +1,130 @@
+/*  */
+.openAccount {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 550px;
+    justify-content: flex-end;
+    color: #fff;
+}
+
+.forBlur {
+    backdrop-filter: blur(10px);
+    background-color: rgba(230, 230, 230, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 170px;
+}
+
+.openAccount h2 {
+    font-family: 'Hahmlet', serif;
+    padding: 20px 20px 20px 0;
+}
+
+.openAccount h4 {
+    font-family: 'Roboto', sans-serif;
+    padding-bottom: 10px;
+}
+
+.btnOnPage {
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+    background-color: #5bddc5;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+.btnWithAnimation {
+    animation-name: slide;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count:infinite; 
+    animation-direction: alternate;
+    border: 1px rgba(255, 255, 255, 0.788) solid !important;
+}
+
+.carousel-inner {
+    width: auto;
+    height: 700px;
+    position: relative;
+    box-shadow: 0 5px 10px;
+}
+
+#investmentCarousel {
+    top: -100px;
+}
+
+
+/* TEST */
+.testBlockName {
+text-align: center;
+padding-bottom: 30px;;
+}
+
+.testForm label{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.testBlock h3{
+    font-family: 'Roboto', sans-serif;
+    font-size: 45px;
+}
+.question{
+    font-family: 'Roboto', sans-serif;
+    font-size: 26px;
+}
+.testBlock p {
+    font-family: 'Roboto', sans-serif;
+}
+
+.testBlockWithImage {
+    display: flex;
+    justify-content: center;
+    margin-top: -40px;
+    margin-bottom: 40px;
+}
+
+.testContainer {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.testImage {
+    height: 300px;
+    padding-right: 100px;
+}
+
+.continue {
+    border: none;
+}
+
+.back {
+    font-size: 20px;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+    background-color: #cccccc6e;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+.testButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 10px;
+}
+
+.questionBlock {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nuberOfQuestion {
+    font-size: 26px;
+}
