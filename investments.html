@@ -44,7 +44,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Loan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Mortgage</a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Mortgage</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="investments.html">Investment</a>
@@ -110,35 +110,54 @@
 
 
             <div class="test">
-                
-                    <h3 class="testBlockName">What’s Your Investing Style?</h3>
-                    <div class="questionBlock">
+
+                <h3 class="testBlockName">What’s Your Investing Style?</h3>
+                <div class="questionBlock">
                     <h5 class="question">How long have you been investing?</h5>
-                    <p class="nuberOfQuestion">/10</p>
+                    <p class="nuberOfQuestion">1/9</p>
                 </div>
+            </div>
+
+            <form class="testForm">
+                <div>
+                    <input id="answerOne" type="radio" name="answer" value="1">
+                    <label class="answers" for="answerOne">I haven’t started yet</label>
                 </div>
+                <div>
+                    <input id="answerTwo" type="radio" name="answer" value="2">
+                    <label class="answers" for="answerTwo">For a while now</label>
+                </div>
+                <div>
+                    <input id="answerThree" type="radio" name="answer" value="3">
+                    <label class="answers" for="answerThree">A long, long time</label>
+                </div>
+                <div class="testButtons">
+                    <button class="backBtn back">Back</button>
+                    <button class="btnOnPage continue disabledBtn">Continue</button>
+                </div>
+            </form>
 
-                <form class="testForm">
-                    <div>
-                        <input id="answerOne" type="radio" name="answer">
-                        <label class="answers" for="answerOne">I haven’t started yet</label>
-                    </div>
-                    <div>
-                        <input id="answerTwo" type="radio" name="answer">
-                        <label class="answers" for="answerTwo">For a while now</label>
-                    </div>
-                    <div>
-                        <input id="answerThree" type="radio" name="answer">
-                        <label class="answers" for="answerThree">A long, long time</label>
-                    </div>
-                    <div class="testButtons">
-                        <button class="back">Back</button>
-                        <button class="btnOnPage continue">Continue</button>
-                    </div>
-                </form>
-
+        </div>
+        <div class="results">
+        <div class="resultsBlock">
+            <div class="result resultOne">
+                <h5>gfrfgf</h5>
+                <p>Expected income:</p>
+            </div>
+            <div class="result resultTwo">
+                <h5>hgfghgf</h5>
+                <p>Expected income:</p>
             </div>
         </div>
+        <div class="resultButtons">
+            <button class="btnMoreInfo">More Info</button>
+            <button class="btnOnPage continue">Open account</button>
+        </div>
+        
+        
+    </div>
+
+    </div>
     </div>
 
 
@@ -193,4 +212,5 @@
 
     <script type="module" src="investmentscript.js"></script>
 </body>
+
 </html>
