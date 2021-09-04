@@ -425,12 +425,12 @@ input:focus, textarea:focus, select:focus{
     border-radius: 30px;
 }
 
-.form-range {
-    height: 0 !important;
-}
+
 
 .calculateItems:hover {
-    border:1px solid rgb(47, 45, 45)
+    border-left:1px solid rgba(47, 45, 45, 0.582);
+    border-top:1px solid rgba(47, 45, 45, 0.582);
+    border-right:1px solid rgba(47, 45, 45, 0.582);
 }
 
 /* remove arrows on input type=number */
@@ -441,6 +441,29 @@ input::-webkit-inner-spin-button {
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
+/* input range */
+.myRange {
+    background: linear-gradient(to right, #7ec897 0%, #82CFD0 12.5%, rgb(231, 231, 231) 12.5%, rgb(224, 223, 223) 100%);
+    border: solid 1px #85858532;
+    border-radius: 8px;
+    height: 7px;
+    outline: none;
+    transition: background 450ms ease-in;
+    -webkit-appearance: none;
+  }
+
+
+  input[type=range]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #3535359a;
+    border: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 9px;
+    background: #0e4136;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -5px;
+  }
 
 
 /* Additional information */
@@ -821,9 +844,4 @@ input::-webkit-inner-spin-button {
         padding: 10px 5px 10px 5px;
     }
 }
-
-
-
-
-
 

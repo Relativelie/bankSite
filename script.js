@@ -64,6 +64,18 @@ setInterval(changeStarPosition, 4000)
 
 // CALCULATOR
 
+const minValueOfRange = [
+    ["mortgageTerm", 10],
+    ["initialFee", 1000],
+    ["cost", 35000]
+]
+function createMinValueForRange() {
+    for (let i=0; i<minValueOfRange.length; i++) {
+        document.querySelector(`#${minValueOfRange[i][0]}`).min = minValueOfRange[i][1];
+    }
+}
+createMinValueForRange()
+
 // calculator on front
 const costRange = document.querySelector("#cost");
 const showCostValue = document.querySelector(".showCostValue");
@@ -78,10 +90,10 @@ showCostValue.addEventListener("input", changeCostValueWhenChangeInput);
 
 
 function changeCostValueWhenChangeInput() {
-        let costInputValue = showCostValue.value.replaceAll(' ', '');
-        costInputValue = parseInt(costInputValue);
-        costRange.value = costInputValue;
-    }
+    let costInputValue = showCostValue.value.replaceAll(' ', '');
+    costInputValue = parseInt(costInputValue);
+    costRange.value = costInputValue;
+}
 
 function changeCostValueWhenChangeRange() {
     let costValue = costRange.value;
@@ -100,6 +112,7 @@ initialFeeRange.addEventListener("input", changeInitialFeeValueWhenChangeRange);
 function changeInitialFeeValueWhenChangeRange() {
     let initialFeeValue = initialFeeRange.value;
     showInitialFeeValue.value = initialFeeValue.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
+    defaultRangeColor(rangeSelectors[1]);
 };
 
 function changeMortgageTermValueWhenChangeRange() {
@@ -202,13 +215,43 @@ mortgageTerm.addEventListener("click", calculations);
 showCostValue.addEventListener("input", calculations);
 showInitialFeeValue.addEventListener("input", calculations);
 showMortgageTermValue.addEventListener("input", calculations);
-document.querySelector('.locationTaxes').onchange = calculateMortgageValues;
+document.querySelector('.locationTaxes').addEventListener("input", calculateMortgageValues);
+
+const rangeSelectors = document.querySelectorAll(".myRange");
+
+rangeSelectors[0].addEventListener("input", changeRangeColor);
+rangeSelectors[1].addEventListener("input", changeRangeColor);
+rangeSelectors[2].addEventListener("input", changeRangeColor);
+
+defaultRangeColor(rangeSelectors[2]);
+defaultRangeColor(rangeSelectors[1]);
+defaultRangeColor(rangeSelectors[2]);
+
+
+
+function defaultRangeColor(param) {
+
+    for (let i=0; i<minValueOfRange.length; i++) {
+        if (param.id===minValueOfRange[i][0]) {
+
+            param.style.background = 'linear-gradient(to right, #7ec897 0%, #82CFD0 ' + Math.ceil((param.value-minValueOfRange[i][1]) / (param.max-minValueOfRange[i][1]) * 100) + '%, rgb(231, 231, 231) ' + Math.ceil((param.value-minValueOfRange[i][1]) / (param.max-minValueOfRange[i][1]) * 100) + '%, rgb(231, 231, 231) 100%)'
+        }
+    }
+}
+function changeRangeColor() {
+
+    for (let i=0; i<minValueOfRange.length; i++) {
+        if (this.id===minValueOfRange[i][0]) {
+            this.style.background = 'linear-gradient(to right, #7ec897 0%, #82CFD0 ' + Math.ceil((this.value-minValueOfRange[i][1]) / (this.max-minValueOfRange[i][1]) * 100) + '%, rgb(231, 231, 231) ' + Math.ceil((this.value-minValueOfRange[i][1]) / (this.max-minValueOfRange[i][1]) * 100) + '%, rgb(231, 231, 231) 100%)'
+        }
+    }
+}
 
 
 // adding all of value on the calculator(with restrictions)
 function calculations(e) {
 
-    if (e.target.classList[0] != "form-range") {
+    if (e.target.classList[0] != "myRange") {
         if (!validationValueOnStrAndLength(e)) {
             return;
         }
@@ -369,4 +412,9 @@ let showContactTextObserver = new IntersectionObserver(function (e) {
 showContactTextObserver.observe(document.querySelector(".footer"));
 
 
+
+
+
 // export {showContactTextObserver};
+
+

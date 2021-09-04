@@ -1,6 +1,7 @@
 // import {showContactTextObserver} from "./script.js";
-// showContactTextObserver.observe(document.querySelector(".footer"));
 
+// import {showContactTextObserver} from "./script.js";
+// showContactTextObserver.observe(document.querySelector(".footer"));
 
 const testQuestions = [
     "How long have you been investing?",
@@ -142,17 +143,20 @@ function OnBack(e) {
 
 
 const personalResult = [
-    ["Balanced Funds", "Fixed-Income Funds"],
-    ["Specialty Funds", "Exchange Traded Funds(ETFs)"],
-    ["International / Global Funds", "Exchange Traded Funds(ETFs)"]
+    ["Balanced Funds", "Fixed-Income Funds", "5-7%", "7-8%"],
+    ["Specialty Funds", "Exchange Traded Funds(ETFs)", "8-11%", "12-15%"],
+    ["International / Global Funds", "Exchange Traded Funds(ETFs)", "10-12%", "12-15%"]
 ];
 
 
 function showResult(s) {
     document.querySelector(".resultOne h5").textContent = personalResult[s][0];
     document.querySelector(".resultTwo h5").textContent = personalResult[s][1];
-    document.querySelector(".resultOne p").textContent = "Expected income: ";
-    document.querySelector(".resultTwo p").textContent = "Expected income: ";
-    document.querySelector(".results").style.display = "block";
+    document.querySelector(".resultOne p").textContent = `Expected income: ${personalResult[s][2]}`;
+    document.querySelector(".resultTwo p").textContent = `Expected income: ${personalResult[s][3]}`;
+    document.querySelector(".results").style.display = "flex";
     document.querySelector(".testBlock").style.display = "none";
+    document.querySelector(".resultImage").style.display = "block";
+    document.querySelector(".testImage").style.display = "none";
 }
+
