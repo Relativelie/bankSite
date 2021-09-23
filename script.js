@@ -11,6 +11,7 @@ function showTypesOfMortgages() {
     let i = 0;
 
     let myInterval = setInterval(function () {
+        console.log(mortgageBlock)
         mortgageBlock[i++].style.marginLeft = '0px';
         if (i == mortgageBlock.length) {
             clearInterval(myInterval);
@@ -24,9 +25,9 @@ let observer = new IntersectionObserver(function (e) {
         showTypesOfMortgages();
         observer.disconnect();
     }
-}, { threshold: [0.33] });
+}, { threshold: [0.3] });
 
-observer.observe(document.querySelector(".baseBlock"));
+observer.observe(document.querySelector(".tab-content"));
 
 
 // STARS
@@ -64,16 +65,21 @@ setInterval(changeStarPosition, 4000)
 
 // CALCULATOR
 
-const minValueOfRange = [
-    ["mortgageTerm", 10],
-    ["initialFee", 1000],
-    ["cost", 35000]
-]
-function createMinValueForRange() {
-    for (let i=0; i<minValueOfRange.length; i++) {
-        document.querySelector(`#${minValueOfRange[i][0]}`).min = minValueOfRange[i][1];
-    }
+const minValueOfRange = {
+    "mortgageTerm": 10,
+    "initialFee": 1000,
+    "cost": 35000
 }
+
+function createMinValueForRange() {
+
+    for (key in minValueOfRange) {
+        console.log(key)
+        document.querySelector(`#${key}`).min = minValueOfRange[key];     
+    }
+
+}
+
 createMinValueForRange()
 
 // calculator on front
@@ -223,27 +229,19 @@ rangeSelectors[0].addEventListener("input", changeRangeColor);
 rangeSelectors[1].addEventListener("input", changeRangeColor);
 rangeSelectors[2].addEventListener("input", changeRangeColor);
 
-defaultRangeColor(rangeSelectors[2]);
+defaultRangeColor(rangeSelectors[0]);
 defaultRangeColor(rangeSelectors[1]);
 defaultRangeColor(rangeSelectors[2]);
 
 
-
 function defaultRangeColor(param) {
-
-    for (let i=0; i<minValueOfRange.length; i++) {
-        if (param.id===minValueOfRange[i][0]) {
-
-            param.style.background = 'linear-gradient(to right, #7ec897 0%, #82CFD0 ' + Math.ceil((param.value-minValueOfRange[i][1]) / (param.max-minValueOfRange[i][1]) * 100) + '%, rgb(231, 231, 231) ' + Math.ceil((param.value-minValueOfRange[i][1]) / (param.max-minValueOfRange[i][1]) * 100) + '%, rgb(231, 231, 231) 100%)'
-        }
+    for (key in minValueOfRange) {
+        param.style.background = 'linear-gradient(to right, #7ec897 0%, #82CFD0 ' + Math.ceil((param.value-minValueOfRange[param.id]) / (param.max-minValueOfRange[param.id]) * 100) + '%, rgb(231, 231, 231) ' + Math.ceil((param.value-minValueOfRange[param.id]) / (param.max-minValueOfRange[param.id]) * 100) + '%, rgb(231, 231, 231) 100%)'
     }
 }
 function changeRangeColor() {
-
-    for (let i=0; i<minValueOfRange.length; i++) {
-        if (this.id===minValueOfRange[i][0]) {
-            this.style.background = 'linear-gradient(to right, #7ec897 0%, #82CFD0 ' + Math.ceil((this.value-minValueOfRange[i][1]) / (this.max-minValueOfRange[i][1]) * 100) + '%, rgb(231, 231, 231) ' + Math.ceil((this.value-minValueOfRange[i][1]) / (this.max-minValueOfRange[i][1]) * 100) + '%, rgb(231, 231, 231) 100%)'
-        }
+    for (key in minValueOfRange){
+        this.style.background = 'linear-gradient(to right, #7ec897 0%, #82CFD0 ' + Math.ceil((this.value-minValueOfRange[this.id]) / (this.max-minValueOfRange[this.id]) * 100) + '%, rgb(231, 231, 231) ' + Math.ceil((this.value-minValueOfRange[this.id]) / (this.max-minValueOfRange[this.id]) * 100) + '%, rgb(231, 231, 231) 100%)'
     }
 }
 

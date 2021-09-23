@@ -618,14 +618,14 @@
             <h3 class="calculateHeaderName" id="calculate">Calculate your mortgage</h3>
             <p class="parStyle">Calculator helps to find favorable conditions</p>
 
-            <div class="rectangular_block">
+            <div class="rectangular_block backgroundWithchosenPlanet">
                 <div class="calculateBlock">
                     <form class="value_for_calculate">
 
                         <div class="calculateItems">
                             <div class="calculateItem">
                                 <label class="fieldNameForCalculate">Choose location</label>
-                                <select class="locationTaxes">
+                                <select class="locationTaxes backgroundColorForSelectionBox">
                                     <option value="earth">Earth</option>
                                     <option value="mars">Mars</option>
                                     <option value="venus">Venus</option>
@@ -638,22 +638,23 @@
                         <div class="calculateItems" id="costBlock">
 
                             <label class="fieldNameForCalculate">The cost, $</label>
-                            <input class="showCostValue inputCalculateValue" value="250 000" pattern="[0-9]+">
+                            <input class="showCostValue inputCalculateValue backgroundColorForSelectionBox" value="250 000" pattern="[0-9]+">
                             <input type="range" class="myRange myRangeCost" max="2000000" id="cost" step="100"
                                 value="250000">
                         </div>
 
                         <div class="calculateItems" id="initialFeeBlock">
                             <label class="fieldNameForCalculate">An initial fee, $</label>
-                            <input class="showInitialFeeValue inputCalculateValue" value="115 000">
-                            <input type="range" class="myRange myRangeinitialFee" max="225000" id="initialFee" step="100"
-                            value="124000">
+                            <input class="showInitialFeeValue inputCalculateValue backgroundColorForSelectionBox" value="115 000">
+                            <input type="range" class="myRange myRangeinitialFee" max="225000" id="initialFee"
+                                step="100" value="124000">
                         </div>
 
                         <div class="calculateItems last_calculate_item" id="termBlock">
                             <label class="fieldNameForCalculate">Mortgage term, years</label>
-                            <input class="showMortgageTermValue inputCalculateValue" type="number" value="20">
-                            <input type="range" class="myRange myRangeTerm"  max="30" value="20" id="mortgageTerm" step="1">
+                            <input class="showMortgageTermValue inputCalculateValue backgroundColorForSelectionBox" type="number" value="20">
+                            <input type="range" class="myRange myRangeTerm" max="30" value="20" id="mortgageTerm"
+                                step="1">
                         </div>
 
                     </form>
@@ -681,6 +682,24 @@
                                 <p class="result interestRate">3%</p>
                             </div>
 
+                        </div>
+                    </div>
+                    <div class="solarSystem">
+                        <div class="orbits">
+                            <div class="orbit orbitMercury"></div>
+                            <div class="orbit orbitVenus"></div>
+                            <div class="orbit orbitEarth"></div>
+                            <div class="orbit orbitMars"></div>
+                        </div>
+
+
+
+                        <div class="planets">
+                            <img class="object planet sun" src="images/sun2.png" alt="">
+                            <div class="mercuryPlanet"></div>
+                            <img class="object planet venusPlanet" src="images/venus2.png" alt="">
+                            <img class="object planet earthPlanet" src="images/earth2.png" alt="">
+                            <img class="planet marsPlanet" src="images/mars2.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -763,6 +782,26 @@
     </div>
 
 
+
+
+
+    <!-- <div class="object orbit orbitJupiter">
+        <img class="object planet" src="jupiter.png" alt="" id="jupiter">
+    </div>
+    <div class="object orbit orbitVenus">
+        <img class="object planet" src="saturn.png" alt="" id="saturn">
+    </div>
+    <div class="object orbit orbitVenus">
+        <img class="object planet" src="uranus.png" alt="" id="uranus">
+    </div>
+    <div class="object orbit orbitVenus">
+        <img class="object planet" src="neptune.png" alt="" id="neptune">
+    </div> -->
+    </div>
+
+
+
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -56,6 +56,64 @@
     top: -100px;
 }
 
+/* WORKING HOURS */
+.workHoursContainer {
+    display: flex;
+}
+
+.workHoursBlock {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+.time {
+    display: flex;
+    justify-content: space-around;
+}
+
+.time p {
+    font-size: 21px;
+    text-shadow: 0 5px 15px black;
+}
+
+.timeItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px;
+}
+
+.hoursPar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 65px;
+    background-color: rgb(0, 0, 0);
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+/* APPS */
+.googleplay {
+    background-image: url("imagesForInvestment/googleplay.png");
+
+}
+
+.appStore {
+    background-image: url("imagesForInvestment/appstore.png");
+}
+
+.appBtn {
+    width: 150px;
+    height: 45px;
+    background-color: transparent;
+    border: none;
+    background-position: center;
+    background-size: cover;
+    margin: 10px
+}
 
 /* TEST */
 .testBlockName {

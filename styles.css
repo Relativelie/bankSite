@@ -354,11 +354,10 @@ table h4 {
 
 .fieldNameForCalculate {
     font-size: 16px;
-    color: #56585a;
     line-height: 25px;
     position: absolute;
     transform: scale(.75) translateY(4px);
-
+    color: #fff
 }
 
 select, input {
@@ -371,16 +370,25 @@ select, input {
     border-radius: 20px;
     padding: 60px;
     margin-bottom: 50px;
+    width: 800px;
+    overflow: hidden;
+    align-items: center;
+}
+
+.result {
+    color: #fff;
 }
 
 .resultBlock {
     padding: 10px;
+    width: 150px;
+    margin-left: 50px;
 }
 
 .resultItemsBlock {
     display: flex;
     flex-direction: column;
-    max-width: 140px;
+    width: 300px;
 }
 
 .result_item {
@@ -388,13 +396,14 @@ select, input {
 }
 
 .resultName {
-    color: #56585a;
+    color: #ffffff;
     font-size: 15px;
+    position: relative;
+    z-index: 2;
 }
 
 .locationTaxes {
     border: none;
-    border-radius: 30px;
     cursor: pointer;
     z-index: 2;
     width: 378px;
@@ -406,8 +415,18 @@ select, input {
     padding-left: 15px;
 }
 
+
+.backgroundColorForSelectionBox {
+    background: rgb(0,0,0);
+background: linear-gradient(90deg, rgba(0,0,0,0.6264880952380952) 43%, rgba(4,0,154,0.6264880952380952) 91%);
+}
+
 .calculateItem {
     position: relative;
+}
+
+input, select {
+    color: #fff;
 }
 
 input:focus, textarea:focus, select:focus{
@@ -422,7 +441,6 @@ input:focus, textarea:focus, select:focus{
     padding-left: 20px;
     font-size: large;
     font-family: 'Roboto', sans-serif;
-    border-radius: 30px;
 }
 
 
@@ -443,7 +461,7 @@ input::-webkit-inner-spin-button {
 
 /* input range */
 .myRange {
-    background: linear-gradient(to right, #7ec897 0%, #82CFD0 12.5%, rgb(231, 231, 231) 12.5%, rgb(224, 223, 223) 100%);
+background: linear-gradient(90deg, rgba(119,172,241,1) 0%, rgba(62,219,240,1) 43%, rgba(192,254,252,1) 91%) !important;
     border: solid 1px #85858532;
     border-radius: 8px;
     height: 7px;
@@ -459,15 +477,13 @@ input::-webkit-inner-spin-button {
     height: 15px;
     width: 15px;
     border-radius: 9px;
-    background: #0e4136;
+    background: #C0FEFC;
     cursor: pointer;
     -webkit-appearance: none;
-    margin-top: -5px;
   }
 
 
 /* Additional information */
-
 .additional_header_name {
     font-size: 30px;
     margin-top: 50px;
@@ -565,6 +581,7 @@ input::-webkit-inner-spin-button {
 }
 
 
+
 @keyframes emergense {
     0% {
         text-shadow: 0 0 140px rgba(226, 228, 117);
@@ -582,6 +599,147 @@ input::-webkit-inner-spin-button {
         text-shadow: none;
     }
   }
+
+.calculateValue {
+    display: flex;
+}
+
+
+.backgroundWithchosenPlanet {
+    background-image: url("images/earth2.png");
+    background-position: -300px -300px;
+    background-size: 600px;
+    background-repeat: no-repeat;
+    background-color: rgb(0, 0, 0);
+    border-radius: 20px;
+}
+
+.solarSystem {
+    position: relative;
+    right: 30px;
+}
+
+.orbit {
+    border-radius: 50%;
+    border: 0.1vmin solid rgb(255, 255, 255);
+    opacity: 0.2;
+    position: absolute;
+}
+
+.orbits {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+}
+
+.orbitMercury {
+    width: 150px;
+    height: 150px;
+}
+
+
+.orbitVenus {
+    width: 200px;
+    height: 200px;
+}
+
+.orbitEarth {
+    width: 290px;
+    height: 290px;
+}
+
+.orbitMars {
+    width: 360px;
+    height: 360px;
+}
+
+.orbitJupiter {
+    width: 590px;
+    height: 590px;
+}
+
+.orbitSaturn {
+    width: 680px;
+    height: 680px;
+}
+
+.orbitUranus {
+    width: 780px;
+    height: 780px;
+}
+
+.orbitNeptune {
+    width: 880px;
+    height: 880px;
+}
+
+.orbitPluto {
+    width: 980px;
+    height: 980px;
+}
+
+
+.mercuryPlanet {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 70px;
+    left: 100px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.venusPlanet {
+    width: 40px;
+    position: absolute;
+    bottom: 50px;
+    left: 70px;
+}
+
+
+.earthPlanet {
+    width: 55px;
+    position: absolute;
+    top: 120px;
+    left: -15px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgb(161, 161, 161);
+
+    z-index: 0;
+}
+
+.marsPlanet {
+    width: 55px;
+    position: absolute;
+    top: -55px;
+    left: 100px;
+}
+
+.sun {
+    width: 100px;
+    top: 100px;
+    left: 100px;
+    position: absolute;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media all and (max-width: 1100px) {
     #families_video {
