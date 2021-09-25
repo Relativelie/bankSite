@@ -375,6 +375,37 @@ select, input {
     align-items: center;
 }
 
+.infoAboutCalculatorImg {
+    cursor: pointer;
+    position: absolute;
+    top: 14%;
+    bottom: 0;
+    right: 29.7%;
+}
+
+.infoAboutCalculatorImg:hover ~ .infoAboutCalculator{
+    opacity: 1;
+}
+
+.odd_block {
+    position: relative;
+}
+
+.infoAboutCalculator {
+    box-shadow: 0 0 5px rgb(124, 124, 124);
+    width: 35%;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    right: -35px;
+    top: -10px;
+    background-color: #fff;
+    opacity: 0;
+    transition: all .5s ease;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+}
+
 .result {
     color: #fff;
 }
@@ -413,6 +444,8 @@ select, input {
     display: flex;
     align-items: flex-end;
     padding-left: 15px;
+    -webkit-appearance : caret;
+    padding-top: 20px;
 }
 
 
@@ -444,7 +477,6 @@ input:focus, textarea:focus, select:focus{
 }
 
 
-
 .calculateItems:hover {
     border-left:1px solid rgba(47, 45, 45, 0.582);
     border-top:1px solid rgba(47, 45, 45, 0.582);
@@ -458,6 +490,12 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
+
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+  }
 
 /* input range */
 .myRange {
@@ -612,6 +650,8 @@ background: linear-gradient(90deg, rgba(119,172,241,1) 0%, rgba(62,219,240,1) 43
     background-repeat: no-repeat;
     background-color: rgb(0, 0, 0);
     border-radius: 20px;
+    transition: all 2s ease;
+    -moz-transition: all 2s ease;
 }
 
 .solarSystem {

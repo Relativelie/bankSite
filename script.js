@@ -11,7 +11,6 @@ function showTypesOfMortgages() {
     let i = 0;
 
     let myInterval = setInterval(function () {
-        console.log(mortgageBlock)
         mortgageBlock[i++].style.marginLeft = '0px';
         if (i == mortgageBlock.length) {
             clearInterval(myInterval);
@@ -25,7 +24,7 @@ let observer = new IntersectionObserver(function (e) {
         showTypesOfMortgages();
         observer.disconnect();
     }
-}, { threshold: [0.3] });
+}, { threshold: [0.38] });
 
 observer.observe(document.querySelector(".tab-content"));
 
@@ -74,7 +73,6 @@ const minValueOfRange = {
 function createMinValueForRange() {
 
     for (key in minValueOfRange) {
-        console.log(key)
         document.querySelector(`#${key}`).min = minValueOfRange[key];     
     }
 
@@ -87,8 +85,10 @@ const costRange = document.querySelector("#cost");
 const showCostValue = document.querySelector(".showCostValue");
 const initialFeeRange = document.querySelector("#initialFee");
 const showInitialFeeValue = document.querySelector(".showInitialFeeValue");
-const mortgageTerm = document.querySelector("#mortgageTerm");
+const mortgageTermRange = document.querySelector("#mortgageTerm");
 const showMortgageTermValue = document.querySelector(".showMortgageTermValue");
+
+
 
 // range block for front
 costRange.addEventListener("input", changeCostValueWhenChangeRange);
@@ -107,39 +107,54 @@ function changeCostValueWhenChangeRange() {
     showCostValue.value = costValue.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
 };
 
-function changeMaxInitialFeeValue() {
+function changeMaxInitialFeeValue(e) {
     initialFeeRange.max = parseInt(showCostValue.value.replaceAll(' ', '')) - 25000;
-    changeInitialFeeValueWhenChangeRange();
 }
 
 
-initialFeeRange.addEventListener("input", changeInitialFeeValueWhenChangeRange);
-
-function changeInitialFeeValueWhenChangeRange() {
-    let initialFeeValue = initialFeeRange.value;
-    showInitialFeeValue.value = initialFeeValue.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
-    defaultRangeColor(rangeSelectors[1]);
+function changeInitialFeeValueWhenChangeRangeOrInput(e) {
+    let valueForInitialFee = 0;
+    if (e.target.classList[1] === "myRangeinitialFee") {
+        valueForInitialFee = initialFeeRange.value;
+        showInitialFeeValue.value = valueForInitialFee.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
+    }
+    else {
+        valueForInitialFee = showInitialFeeValue.value.replaceAll(' ', '');
+        initialFeeRange.value = valueForInitialFee;
+    }
 };
 
-function changeMortgageTermValueWhenChangeRange() {
-    let mortgageTermValue = mortgageTerm.value;
-    showMortgageTermValue.value = mortgageTermValue.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');;
+function changeMortgageTermValueWhenChangeRangeOrInput(e) {
+    let mortgageTermValue
+    if (e.target.classList[1] === "myRangeTerm") {
+        mortgageTermValue = mortgageTermRange.value;
+        showMortgageTermValue.value = mortgageTermValue.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
+    }
+
+    else {
+        mortgageTermValue = showMortgageTermValue.value.replaceAll(' ', '');
+        mortgageTermRange.value = mortgageTermValue.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
+    }
+    
 }
-mortgageTerm.addEventListener("input", changeMortgageTermValueWhenChangeRange);
+mortgageTermRange.addEventListener("input", changeMortgageTermValueWhenChangeRangeOrInput);
+showMortgageTermValue.addEventListener("input", changeMortgageTermValueWhenChangeRangeOrInput);
 
 // taxes is depended on place
 // interest rate
 // interest rate for calculate monthly payment
+let locationTaxes = document.querySelector(".locationTaxes");
+let difCostAndInitialFee = 0;
 
 function interestRate() {
 
+
     let creditPercent;
 
-    let difCostAndInitialFee = parseInt(showCostValue.value.replaceAll(' ', '')) - parseInt(showInitialFeeValue.value.replaceAll(' ', ''));
-    let locationTaxes = document.querySelector(".locationTaxes").value;
+    difCostAndInitialFee =  parseInt(costRange.value) - parseInt(initialFeeRange.value);
 
 
-    if (locationTaxes === "earth") {
+    if (locationTaxes.options[locationTaxes.selectedIndex].text === "Earth") {
         if (difCostAndInitialFee < 80000) {
             creditPercent = 5.5;
         }
@@ -151,7 +166,7 @@ function interestRate() {
         else creditPercent = 3;
     }
 
-    else if (locationTaxes === "mars") {
+    else if (locationTaxes.options[locationTaxes.selectedIndex].text === "Mars") {
         if (difCostAndInitialFee < 80000) {
             creditPercent = 5;
         }
@@ -163,7 +178,7 @@ function interestRate() {
         else creditPercent = 2.5;
     }
 
-    else if (locationTaxes === "venus") {
+    else if (locationTaxes.options[locationTaxes.selectedIndex].text === "Venus") {
         if (difCostAndInitialFee < 80000) {
             creditPercent = 3.5;
         }
@@ -175,7 +190,7 @@ function interestRate() {
         else creditPercent = 2.5;
     }
 
-    else if (locationTaxes === "universe") {
+    else if (locationTaxes.options[locationTaxes.selectedIndex].text === "Universe") {
         if (difCostAndInitialFee < 80000) {
             creditPercent = 3;
         }
@@ -217,7 +232,7 @@ function animatedValue(value, id) {
 // value from the front
 costRange.addEventListener("click", calculations);
 initialFeeRange.addEventListener("click", calculations);
-mortgageTerm.addEventListener("click", calculations);
+mortgageTermRange.addEventListener("click", calculations);
 showCostValue.addEventListener("input", calculations);
 showInitialFeeValue.addEventListener("input", calculations);
 showMortgageTermValue.addEventListener("input", calculations);
@@ -225,30 +240,10 @@ document.querySelector('.locationTaxes').addEventListener("input", calculateMort
 
 const rangeSelectors = document.querySelectorAll(".myRange");
 
-rangeSelectors[0].addEventListener("input", changeRangeColor);
-rangeSelectors[1].addEventListener("input", changeRangeColor);
-rangeSelectors[2].addEventListener("input", changeRangeColor);
-
-defaultRangeColor(rangeSelectors[0]);
-defaultRangeColor(rangeSelectors[1]);
-defaultRangeColor(rangeSelectors[2]);
-
-
-function defaultRangeColor(param) {
-    for (key in minValueOfRange) {
-        param.style.background = 'linear-gradient(to right, #7ec897 0%, #82CFD0 ' + Math.ceil((param.value-minValueOfRange[param.id]) / (param.max-minValueOfRange[param.id]) * 100) + '%, rgb(231, 231, 231) ' + Math.ceil((param.value-minValueOfRange[param.id]) / (param.max-minValueOfRange[param.id]) * 100) + '%, rgb(231, 231, 231) 100%)'
-    }
-}
-function changeRangeColor() {
-    for (key in minValueOfRange){
-        this.style.background = 'linear-gradient(to right, #7ec897 0%, #82CFD0 ' + Math.ceil((this.value-minValueOfRange[this.id]) / (this.max-minValueOfRange[this.id]) * 100) + '%, rgb(231, 231, 231) ' + Math.ceil((this.value-minValueOfRange[this.id]) / (this.max-minValueOfRange[this.id]) * 100) + '%, rgb(231, 231, 231) 100%)'
-    }
-}
 
 
 // adding all of value on the calculator(with restrictions)
 function calculations(e) {
-
     if (e.target.classList[0] != "myRange") {
         if (!validationValueOnStrAndLength(e)) {
             return;
@@ -257,14 +252,17 @@ function calculations(e) {
             return;
         }
     }
-    calculateMortgageValues();
+    calculateMortgageValues(e);
 
 }
 
-function calculateMortgageValues() {
-    changeMaxInitialFeeValue();
-    let creditAmount = parseInt(showCostValue.value.replaceAll(' ', '')) - parseInt(showInitialFeeValue.value.replaceAll(' ', ''));
-    animatedValue(creditAmount, ".creditAmount");
+function calculateMortgageValues(e) {
+    changeMaxInitialFeeValue(e);
+    changeInitialFeeValueWhenChangeRangeOrInput(e)
+
+    difCostAndInitialFee =  parseInt(costRange.value) - parseInt(initialFeeRange.value);
+
+    animatedValue(difCostAndInitialFee, ".creditAmount");
 
 
     document.querySelector(".interestRate").textContent = `${interestRate()}%`;
@@ -276,6 +274,7 @@ function calculateMortgageValues() {
 }
 
 function validationOnMinValue() {
+    
 
     if (parseInt(showCostValue.value.replaceAll(' ', '')) >= 35000) {
         removeBorderColor("#costBlock", "redBorder");
@@ -324,7 +323,6 @@ function validationValueOnStrAndLength(e) {
     }
 
     if (e.target.classList[0] === "showInitialFeeValue") {
-
         if (parseInt(document.querySelector(`.${e.target.classList[0]}`).value.replaceAll(' ', '')) < parseInt(showCostValue.value.replaceAll(' ', ''))) {
             if (validationValueOnStr(e)) {
                 return true;
@@ -352,6 +350,7 @@ function deleteLastCharacter(e) {
 }
 
 function validationValueOnStr(e) {
+
     if (isNaN(document.querySelector(`.${e.target.classList[0]}`).value.substr(document.querySelector(`.${e.target.classList[0]}`).value.length - 1)) === false) {
         return true;
     }
@@ -374,7 +373,7 @@ function monthlyPayment() {
 
     let monthlyRate = interestRate() / (12 * 100);
     let creditSum = parseInt(showCostValue.value.replaceAll(' ', '')) - parseInt(showInitialFeeValue.value.replaceAll(' ', ''));
-    let coefficient = (monthlyRate * ((1 + monthlyRate) ^ (mortgageTerm.value * 12))) / (((1 + monthlyRate) ^ (mortgageTerm.value * 12)) - 1);
+    let coefficient = (monthlyRate * ((1 + monthlyRate) ^ (mortgageTermRange.value * 12))) / (((1 + monthlyRate) ^ (mortgageTermRange.value * 12)) - 1);
     let monthlyPaymentValue = (coefficient * creditSum).toFixed(0);
     return monthlyPaymentValue
 }
@@ -412,7 +411,30 @@ showContactTextObserver.observe(document.querySelector(".footer"));
 
 
 
+// CALCULATOR ANIMATION
 
-// export {showContactTextObserver};
+function calculatorAnimation() {
+    const backgroundWithChosenPlanet = document.querySelector(".backgroundWithchosenPlanet");
+
+    if (locationTaxes.options[locationTaxes.selectedIndex].text === "Earth") {
+        backgroundWithChosenPlanet.style.backgroundImage = 'url("images/earth2.png")';
+        
+    }
+
+    else if (locationTaxes.options[locationTaxes.selectedIndex].text === "Mars") {
+        backgroundWithChosenPlanet.style.backgroundImage = 'url("images/mars2.png")';
+
+    }
+
+    else if (locationTaxes.options[locationTaxes.selectedIndex].text === "Venus") {
+        backgroundWithChosenPlanet.style.backgroundImage = 'url("images/venus2.png")'
+    }
+
+    else {
+        // backgroundWithChosenPlanet.style.background = "images/venus2.png"
+    }
+}
+ 
 
 
+document.querySelector('.locationTaxes').addEventListener("input", calculatorAnimation);
