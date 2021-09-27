@@ -73,7 +73,7 @@ const minValueOfRange = {
 function createMinValueForRange() {
 
     for (key in minValueOfRange) {
-        document.querySelector(`#${key}`).min = minValueOfRange[key];     
+        document.querySelector(`#${key}`).min = minValueOfRange[key];
     }
 
 }
@@ -135,7 +135,7 @@ function changeMortgageTermValueWhenChangeRangeOrInput(e) {
         mortgageTermValue = showMortgageTermValue.value.replaceAll(' ', '');
         mortgageTermRange.value = mortgageTermValue.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
     }
-    
+
 }
 mortgageTermRange.addEventListener("input", changeMortgageTermValueWhenChangeRangeOrInput);
 showMortgageTermValue.addEventListener("input", changeMortgageTermValueWhenChangeRangeOrInput);
@@ -151,7 +151,7 @@ function interestRate() {
 
     let creditPercent;
 
-    difCostAndInitialFee =  parseInt(costRange.value) - parseInt(initialFeeRange.value);
+    difCostAndInitialFee = parseInt(costRange.value) - parseInt(initialFeeRange.value);
 
 
     if (locationTaxes.options[locationTaxes.selectedIndex].text === "Earth") {
@@ -190,7 +190,7 @@ function interestRate() {
         else creditPercent = 2.5;
     }
 
-    else if (locationTaxes.options[locationTaxes.selectedIndex].text === "Universe") {
+    else if (locationTaxes.options[locationTaxes.selectedIndex].text === "Mercury") {
         if (difCostAndInitialFee < 80000) {
             creditPercent = 3;
         }
@@ -260,7 +260,7 @@ function calculateMortgageValues(e) {
     changeMaxInitialFeeValue(e);
     changeInitialFeeValueWhenChangeRangeOrInput(e)
 
-    difCostAndInitialFee =  parseInt(costRange.value) - parseInt(initialFeeRange.value);
+    difCostAndInitialFee = parseInt(costRange.value) - parseInt(initialFeeRange.value);
 
     animatedValue(difCostAndInitialFee, ".creditAmount");
 
@@ -274,7 +274,7 @@ function calculateMortgageValues(e) {
 }
 
 function validationOnMinValue() {
-    
+
 
     if (parseInt(showCostValue.value.replaceAll(' ', '')) >= 35000) {
         removeBorderColor("#costBlock", "redBorder");
@@ -410,31 +410,92 @@ showContactTextObserver.observe(document.querySelector(".footer"));
 
 
 
-
-// CALCULATOR ANIMATION
-
-function calculatorAnimation() {
-    const backgroundWithChosenPlanet = document.querySelector(".backgroundWithchosenPlanet");
-
-    if (locationTaxes.options[locationTaxes.selectedIndex].text === "Earth") {
-        backgroundWithChosenPlanet.style.backgroundImage = 'url("images/earth2.png")';
-        
-    }
-
-    else if (locationTaxes.options[locationTaxes.selectedIndex].text === "Mars") {
-        backgroundWithChosenPlanet.style.backgroundImage = 'url("images/mars2.png")';
-
-    }
-
-    else if (locationTaxes.options[locationTaxes.selectedIndex].text === "Venus") {
-        backgroundWithChosenPlanet.style.backgroundImage = 'url("images/venus2.png")'
-    }
-
-    else {
-        // backgroundWithChosenPlanet.style.background = "images/venus2.png"
+let previousPlanet = "Earth";
+let rotationForCurrentPlanet = 300;
+let planetsPositions = {
+    "Mars": {
+        "id": "#mars",
+        "Earth": 220,
+        "Venus": 20,
+        "Mercury": 210,
+        "currentDegree": 0
+    },
+    "Earth": {
+        "id": "#earth",
+        "Mars": 200,
+        "Venus": 50,
+        "Mercury": 30,
+        "currentDegree": 0
+    },
+    "Venus": {
+        "id": "#venus",
+        "Earth": 20,
+        "Mars": 210,
+        "Mercury": 180,
+        "currentDegree": 0
+    },
+    "Mercury": {
+        "id": "#mercury",
+        "Earth": 260,
+        "Venus": 230,
+        "Mars": 30,
+        "currentDegree": 0
     }
 }
- 
+let marsRotation = 0;
+document.querySelector('.locationTaxes').addEventListener("input", rotatePlanets);
+rotatePlanets();
 
 
-document.querySelector('.locationTaxes').addEventListener("input", calculatorAnimation);
+function rotatePlanets() {
+    let currentPlanet = locationTaxes.options[locationTaxes.selectedIndex].text;
+    calculatorBackground(currentPlanet);
+    rotatePlanet(currentPlanet, rotationForCurrentPlanet);
+    planetShodow(currentPlanet)
+
+    for (let planet in planetsPositions) {
+        if (planet === currentPlanet) {
+            continue;
+        }
+        rotatePlanet(planet, planetsPositions[currentPlanet][planet]);
+
+    }
+}
+
+function rotatePlanet(currentPlanet, grade) {
+    planetId = planetsPositions[currentPlanet]["id"];
+    let remainder = planetsPositions[currentPlanet]["currentDegree"] % 360;
+    if (remainder > grade) {
+        grade = 360 - remainder + grade;
+    }
+    else {
+        grade -= remainder;
+    }
+    planetsPositions[currentPlanet]["currentDegree"] += grade / 2;
+    document.querySelector(planetId).classList.remove("animationTwo");
+    document.querySelector(planetId).classList.add("animationOne");
+    document.querySelector(planetId).style.transform = `rotate(${planetsPositions[currentPlanet]["currentDegree"]}deg)`;
+    document.querySelector(`${planetId} img`).style.boxShadow = "";
+    rotatePlanetContinue(currentPlanet, grade, planetId)
+}
+
+function rotatePlanetContinue(currentPlanet, grade, planetId) {
+    setTimeout(function () {
+        planetsPositions[currentPlanet]["currentDegree"] += grade / 2;
+        document.querySelector(planetId).classList.remove("animationOne");
+        document.querySelector(planetId).classList.add("animationTwo");
+        document.querySelector(planetId).style.transform = `rotate(${planetsPositions[currentPlanet]["currentDegree"]}deg)`;
+
+    }, 1000)
+}
+
+function planetShodow(planetId) {
+    document.querySelector(`#${planetId.toLowerCase()} img`).style.boxShadow = "0 1px 17px rgb(161, 161, 161)";
+}
+
+function calculatorBackground(currentPlanet) {
+    const backgroundWithChosenPlanet = document.querySelector(".backgroundWithchosenPlanet");
+    backgroundWithChosenPlanet.classList.remove(`imageFor${previousPlanet}`);
+    previousPlanet = currentPlanet
+    backgroundWithChosenPlanet.classList.add(`imageFor${currentPlanet}`);
+}

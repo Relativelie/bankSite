@@ -130,7 +130,7 @@
             <button class="nav-link location" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
                 type="button" role="tab" aria-controls="nav-contact" aria-selected="false">House on Venus</button>
             <button class="nav-link location" id="nav-universe-tab" data-bs-toggle="tab" data-bs-target="#nav-universe"
-                type="button" role="tab" aria-controls="nav-universe" aria-selected="false">House on Universe</button>
+                type="button" role="tab" aria-controls="nav-universe" aria-selected="false">House on Mercury</button>
         </div>
     </nav>
     <div class="tab-content" id="nav-tabContent">
@@ -564,7 +564,7 @@
                 <div class="rectangularBlock mobile_indoor_block lastItem universe">
 
                     <div class="mortgageNameWithBtn">
-                        <h3 class="mortgageHeader textOfMortgages mobile_header_name"> Mortgages of other universe</h3>
+                        <h3 class="mortgageHeader textOfMortgages mobile_header_name"> House on Mercury</h3>
                         <a href="mailto:sopio1992@gmail.com"><button class="btn btnMore"><span class="textMore">More
                                     details</span></button></a>
                     </div>
@@ -622,7 +622,7 @@
             <div class="infoAboutCalculator">
                 <p>These сalculator is for informational purposes only and must not be taken as recommendations.</p>
             </div>
-            <div class="rectangular_block backgroundWithchosenPlanet">
+            <div class="rectangular_block backgroundWithchosenPlanet blackBack">
                 <div class="calculateBlock">
                     <form class="value_for_calculate">
 
@@ -633,7 +633,7 @@
                                     <option value="earth">Earth</option>
                                     <option value="mars">Mars</option>
                                     <option value="venus">Venus</option>
-                                    <option value="universe">Universe</option>
+                                    <option value="universe">Mercury</option>
                                 </select>
                             </div>
 
@@ -692,21 +692,38 @@
                         </div>
                     </div>
                     <div class="solarSystem">
-                        <div class="orbits">
-                            <div class="orbit orbitMercury"></div>
-                            <div class="orbit orbitVenus"></div>
-                            <div class="orbit orbitEarth"></div>
-                            <div class="orbit orbitMars"></div>
-                        </div>
+                        <!-- <div class="planetsOne"> -->
+                            <!-- class="orbits" -->
+                            <div class="orbits" id="mars">
+                                <div class="orbit orbitMars"></div>
+                                <img class="planet marsPlanet" src="images/mars2.png" alt="">
+                            </div>
+
+                            <div class="orbits" id="venus">
+                                <div class="orbit orbitVenus"></div>
+                                <img class="object planet venusPlanet" src="images/venus2.png" alt="">
+                            </div>
+
+                            <div class="orbits" id="earth">
+                                <div class="orbit orbitEarth"></div>
+                                <img class="object planet earthPlanet" src="images/earth2.png" alt="">
+                            </div>
+
+                            <div class="orbits" id="mercury">
+                                <div class="orbit orbitMercury"></div>
+                                <img class="object planet mercuryPlanet" src="images/mercury.png" alt="">
+                            </div>
+
+                        <!-- </div> -->
 
 
 
-                        <div class="planets">
-                            <img class="object planet sun" src="images/sun2.png" alt="">
-                            <div class="mercuryPlanet"></div>
-                            <img class="object planet venusPlanet" src="images/venus2.png" alt="">
-                            <img class="object planet earthPlanet" src="images/earth2.png" alt="">
-                            <img class="planet marsPlanet" src="images/mars2.png" alt="">
+                        <div class="planetsOne">
+                            <img class="object sun" src="images/sun2.png" alt="">
+                            
+                            
+                            
+                            
                         </div>
                     </div>
                 </div>

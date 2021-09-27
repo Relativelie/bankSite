@@ -422,8 +422,8 @@ select, input {
     width: 300px;
 }
 
-.result_item {
-    padding: 0px 30px 0px 30px;
+.resultItem {
+    z-index: 2;
 }
 
 .resultName {
@@ -451,7 +451,7 @@ select, input {
 
 .backgroundColorForSelectionBox {
     background: rgb(0,0,0);
-background: linear-gradient(90deg, rgba(0,0,0,0.6264880952380952) 43%, rgba(4,0,154,0.6264880952380952) 91%);
+    background: linear-gradient(90deg, rgba(0,0,0,0.6264880952380952) 43%, rgba(4,0,154,0.6264880952380952) 91%);
 }
 
 .calculateItem {
@@ -642,26 +642,44 @@ background: linear-gradient(90deg, rgba(119,172,241,1) 0%, rgba(62,219,240,1) 43
     display: flex;
 }
 
-
 .backgroundWithchosenPlanet {
-    background-image: url("images/earth2.png");
     background-position: -300px -300px;
     background-size: 600px;
     background-repeat: no-repeat;
     background-color: rgb(0, 0, 0);
+    transition: all 1s ease;
+    -moz-transition: all 1s ease;
     border-radius: 20px;
-    transition: all 2s ease;
-    -moz-transition: all 2s ease;
 }
+
+.imageForMars {
+    background-image: url("images/mars2.png");
+}
+
+.imageForEarth {
+    background-image: url("images/earth2.png");
+}
+
+.imageForVenus {
+    background-image: url("images/venus2.png");
+    background-size: 550px;
+}
+
+.imageForMercury {
+    background-image: url("images/mercury.png");
+}
+
 
 .solarSystem {
     position: relative;
-    right: 30px;
+    right: 44px;
+    top: -150px;
 }
 
 .orbit {
     border-radius: 50%;
-    border: 0.1vmin solid rgb(255, 255, 255);
+    border: 0.1vmin solid;
+    border-color: #fff;
     opacity: 0.2;
     position: absolute;
 }
@@ -672,71 +690,48 @@ background: linear-gradient(90deg, rgba(119,172,241,1) 0%, rgba(62,219,240,1) 43
     justify-content: center;
     width: 300px;
     height: 300px;
+
+    position: absolute;
 }
 
 .orbitMercury {
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
 }
 
-
 .orbitVenus {
-    width: 200px;
-    height: 200px;
+    width: 210px;
+    height: 210px;
 }
 
 .orbitEarth {
-    width: 290px;
-    height: 290px;
+    width: 310px;
+    height: 310px;
 }
 
 .orbitMars {
-    width: 360px;
-    height: 360px;
-}
-
-.orbitJupiter {
-    width: 590px;
-    height: 590px;
-}
-
-.orbitSaturn {
-    width: 680px;
-    height: 680px;
-}
-
-.orbitUranus {
-    width: 780px;
-    height: 780px;
-}
-
-.orbitNeptune {
-    width: 880px;
-    height: 880px;
-}
-
-.orbitPluto {
-    width: 980px;
-    height: 980px;
+    width: 420px;
+    height: 420px;
 }
 
 
 .mercuryPlanet {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     position: absolute;
-    top: 70px;
+    top: 80px;
     left: 100px;
-    background-color: rgb(0, 0, 0);
     border-radius: 50%;
-    border: 1px solid #fff;
 }
 
 .venusPlanet {
     width: 40px;
     position: absolute;
-    bottom: 50px;
-    left: 70px;
+    top: 130px;
+    left: 20px;
+    transform-origin:310% center;
+    transform:rotate(60deg);
+    border-radius: 50%;
 }
 
 
@@ -744,19 +739,30 @@ background: linear-gradient(90deg, rgba(119,172,241,1) 0%, rgba(62,219,240,1) 43
     width: 55px;
     position: absolute;
     top: 120px;
-    left: -15px;
+    left: -25px;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgb(161, 161, 161);
-
-    z-index: 0;
+    transform-origin: 320% center;
+    transform:rotate(60deg);
 }
 
 .marsPlanet {
     width: 55px;
     position: absolute;
-    top: -55px;
-    left: 100px;
+    top: 125px;
+    left: -75px;
+    transform-origin: 430% center;
+    transform:rotate(60deg);
+    border-radius: 50%;
 }
+
+.animationOne {
+    transition: all 1s ease-in;
+}
+
+.animationTwo {
+    transition: all 1s ease-out;
+}
+
 
 .sun {
     width: 100px;
@@ -766,7 +772,21 @@ background: linear-gradient(90deg, rgba(119,172,241,1) 0%, rgba(62,219,240,1) 43
 }
 
 
+@keyframes rotateMars {
+    100% { transform:rotate(-300deg);
+    }
+}
 
+@keyframes rotateEarth {
+    100% { transform:rotate(-360deg);
+    }
+}
+
+@keyframes rotateVenus {
+    100% { transform:rotate(-420deg);
+}}
+
+/* 420 */
 
 
 
