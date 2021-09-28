@@ -101,7 +101,7 @@ function onContinue(e) {
         let results = 0;
         Object.values(dictOfAnswers).forEach(element => {
             results += parseInt(element);
-            
+
         });
 
         // [1,8]
@@ -160,3 +160,162 @@ function showResult(s) {
     document.querySelector(".testImage").style.display = "none";
 }
 
+
+let personalInfo = [];
+let selectedRates = [];
+let allOpeningBlock = document.querySelectorAll(".insideOpeningBlock");
+let allSteps = document.querySelectorAll(".numberOfStep");
+let allStepsText = document.querySelectorAll(".numberOfStep h4");
+document.querySelector(".openBtn").addEventListener("click", showBlockWithOpeningAccount);
+document.querySelector(".openingHeader img").addEventListener("click", closeBlockWithOpeningAccount);
+
+function closeBlockWithOpeningAccount() {
+
+    document.querySelector(".openingBlock").style.left = "-800px";
+}
+
+function showBlockWithOpeningAccount() {
+    document.querySelector(".openingBlock").style.left = "0px";
+}
+function openingAccount(e) {
+    console.log(e.target.classList[0])
+    if (e.target.classList[0] === "methodButton") {
+        if (document.querySelector("#flexRadioDefault1").checked) {
+
+            getPersonalInfo();
+        }
+
+        else {
+            allOpeningBlock[0].style.display = "none";
+            allStepsText[0].textContent = "✓";
+            allSteps[0].classList.remove("selected");
+            document.querySelector("#openingMethodHeaderName").classList.remove("disabled");
+            allSteps[0].classList.add("done");
+            allSteps[1].classList.add("selected");
+            allOpeningBlock[1].style.display = "block";
+        }
+
+
+    }
+
+    if (e.target.classList[0] === "personalInfoButton") {
+        for (let info = 0; info < document.querySelectorAll(".personalInfo input").length; info++) {
+            console.log(document.querySelectorAll(".personalInfo input")[info].classList[1])
+            if (document.querySelectorAll(".personalInfo input")[info].value === "") {
+                document.querySelectorAll(".personalInfo input")[info].classList.add("redBorder");
+            }
+            else {
+                document.querySelectorAll(".personalInfo input")[info].classList.remove("redBorder");
+            }
+        }
+        for (let field = 0; field < document.querySelectorAll(".personalInfo input").length; field++) {
+            if (document.querySelectorAll(".personalInfo input")[field].value === "") {
+                break
+            }
+            else if (document.querySelectorAll(".personalInfo input")[document.querySelectorAll(".personalInfo input").length - 1] === document.querySelectorAll(".personalInfo input")[field]) {
+                for (let fieldValue = 0; fieldValue < document.querySelectorAll(".personalInfo input").length; fieldValue++) {
+                    personalInfo.push(document.querySelectorAll(".personalInfo input")[fieldValue].value);
+                }
+                allOpeningBlock[1].style.display = "none";
+                allOpeningBlock[2].style.display = "block";
+                allSteps[1].classList.remove("selected");
+                document.querySelector("#personalInfoHeaderName").classList.remove("disabled");
+                allSteps[2].classList.add("selected");
+                allSteps[1].classList.add("done");
+                allStepsText[1].textContent = "✓";
+                console.log(personalInfo);
+            }
+
+        }
+    }
+    if (e.target.classList[0] === "choosingRateButton") {
+        console.log(1)
+        let rates = document.querySelectorAll(".rates :checked");
+        if (document.querySelectorAll(".rates .form-check-input:checked").length === 0) {
+            
+            document.querySelector(".ratesModal").style.display = "block";
+            setTimeout(function () {
+                document.querySelector(".ratesModal").style.opacity = "1";
+            }, 500)
+    
+            setTimeout(function () {
+                document.querySelector(".ratesModal").style.opacity = "0";
+                setTimeout(function () {
+                    document.querySelector(".ratesModal").style.display = "none";
+                }, 3000)
+            }, 3500)
+
+        }
+        else {
+            for (let rate = 0; rate < rates.length; rate++) {
+                selectedRates.push(rates[rate].value)
+            }
+        }
+    }
+    let clearPersonalInfo = setTimeout(function () {
+        personalInfo = [];
+        clearTimeout(clearPersonalInfo);
+    }, 3600000)
+
+}
+let countOfStep = 0;
+function backOneStep(e) {
+    if (e.path[0].classList.value != "disabled") {
+        if (!(e.path[0].id === "openingMethodHeaderName" && countOfStep === 2)) {
+            if (e.path[0].id === "openingMethodHeaderName") countOfStep = 0
+            else if (e.path[0].id === "personalInfoHeaderName") countOfStep = 1
+            else countOfStep = 2
+            allOpeningBlock[countOfStep].style.display = "block";
+            allOpeningBlock[countOfStep + 1].style.display = "none";
+            allStepsText[countOfStep].textContent = countOfStep + 1;
+            allSteps[countOfStep].classList.add("selected");
+            allSteps[countOfStep].classList.remove("done");
+            allSteps[countOfStep + 1].classList.remove("selected");
+            allSteps[countOfStep + 1].classList.add("disabled");
+        }
+    }
+}
+
+
+document.querySelector(".method button").addEventListener("click", openingAccount);
+document.querySelector(".personalInfo button").addEventListener("click", openingAccount);
+document.querySelector(".choosingRate button").addEventListener("click", openingAccount);
+document.querySelector("#openingMethodHeaderName").addEventListener("click", backOneStep);
+document.querySelector("#personalInfoHeaderName").addEventListener("click", backOneStep);
+document.querySelector("#choosingRateHeaderName").addEventListener("click", backOneStep);
+
+async function getPersonalInfo() {
+    const result = await fetch(`https://bankproject.free.beeceptor.com/personal_info`);
+    const resultReceived = await result.json();
+    console.log(resultReceived.status)
+    if (resultReceived.status === "ok") {
+        console.log(resultReceived)
+        document.querySelector("#firstName").value = resultReceived.first_name;
+        document.querySelector("#lastName").value = resultReceived.last_name;
+        document.querySelector("#birthday").value = resultReceived.birthday;
+        document.querySelector("#phoneNumber").value = resultReceived.phone_number;
+        document.querySelector("#passNumber").value = resultReceived.pass_num;
+        allOpeningBlock[0].style.display = "none";
+        allStepsText[0].textContent = "✓";
+        allSteps[0].classList.remove("selected");
+        document.querySelector("#openingMethodHeaderName").classList.remove("disabled");
+        allSteps[0].classList.add("done");
+        allSteps[1].classList.add("selected");
+        allOpeningBlock[1].style.display = "block";
+    }
+    else {
+        document.querySelector(".somethingWrong").style.display = "block";
+        setTimeout(function () {
+            document.querySelector(".somethingWrong").style.opacity = "1";
+        }, 500)
+
+        setTimeout(function () {
+            document.querySelector(".somethingWrong").style.opacity = "0";
+            setTimeout(function () {
+                document.querySelector(".somethingWrong").style.display = "none";
+            }, 2000)
+        }, 2500)
+
+    }
+
+}

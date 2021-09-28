@@ -77,17 +77,16 @@
                     <div class="forBlur">
                         <h2>Investing with Bank of Feature</h2>
                         <h4>Open your own brokerage account for 5 minute</h4>
-                        <button class="btnOnPage btnWithAnimation">Open account</button>
+                        <button class="btnOnPage btnWithAnimation openBtn">Open account</button>
                     </div>
 
                 </div>
                 <img src="imagesForInvestment/apps.jpg" class="d-block w-100" alt="openAccount">
-
             </div>
 
 
 
-            <div class="carousel-item">
+            <!-- <div class="carousel-item">
                 <div class="openAccount">
                     <div class="forBlur">
                         <h2>Working hours</h2>
@@ -137,7 +136,7 @@
                 </div>
                 <img src="imagesForInvestment/openAccount.jpg" class="d-block w-100" alt="openAccount">
 
-            </div>
+            </div> -->
 
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#investmentCarousel" data-bs-slide="prev">
@@ -150,7 +149,143 @@
         </button>
     </div>
 
+    <!-- opening account -->
+    <div class="openingContainer">
 
+
+        <div class="openingBlock">
+
+
+            <div class="openingHeader">
+                <h4>Opening account</h4>
+                <img src="imagesForInvestment/close.png" alt="">
+            </div>
+            <hr>
+            <div class="method">
+                <div class="methodHeader">
+                    <div class="numberOfStep selected">
+                        <h4>1</h4>
+                    </div>
+                    <h4 id="openingMethodHeaderName" class="disabled">Opening method</h4>
+                </div>
+                <div class="insideOpeningBlock">
+                    <form class="methods" action="">
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Passport
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                                checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                With our debit card
+                            </label>
+                        </div>
+                    </form>
+                    <div class="somethingWrong">
+                        <p>Something went wrong, please wait or choose another method </p>
+                    </div>
+                    <button class="methodButton">Continue</button>
+                </div>
+                <div class="connectorClosingBlock"></div>
+            </div>
+            <div class="personalInfo">
+                <div class="methodHeader">
+                    <div class="numberOfStep">
+                        <h4>2</h4>
+                    </div>
+                    <h4 id="personalInfoHeaderName" class="disabled">Personal data</h4>
+                </div>
+
+                <div class="insideOpeningBlock">
+                    <form class="personalInfoForm" action="">
+                        <div>
+                            <input id="firstName" type="text" placeholder="First name">
+                            <input id="lastName" type="text" placeholder="Last name">
+                        </div>
+                        <div>
+                            <input id="birthday" placeholder="Birthday" class="textbox-n" type="text"
+                                onfocus="(this.type='date')" onblur="(this.type='text')" id="date" />
+                            <input id="passNumber" type="number" placeholder="Passport number">
+                        </div>
+                        <div>
+                            <input id="phoneNumber" type="tel" placeholder="Phone number">
+                            <div>
+                            </div>
+                        </div>
+                    </form>
+                    <button class="personalInfoButton">Continue</button>
+                </div>
+
+                <div class="connectorClosingBlock"></div>
+            </div>
+
+            <div class="choosingRate">
+                <div class="methodHeader">
+                    <div class="numberOfStep">
+                        <h4>3</h4>
+                    </div>
+                    <h4 id="choosingRateHeaderName" class="disabled">Choosing rate</h4>
+                    <div class="ratesModal">
+                        <p>One of rates have to be selected</p>
+                    </div>
+                </div>
+                <div class="insideOpeningBlock">
+                    <form class="rates" action="">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Balanced Funds" id="balanced">
+                            <label class="form-check-label" for="balanced">
+                                Balanced Funds
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Fixed-Income Funds" id="fixed">
+                            <label class="form-check-label" for="fixed">
+                                Fixed-Income Funds
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Exchange Traded Funds(ETFs)"
+                                id="exchange">
+                            <label class="form-check-label" for="exchange">
+                                Exchange Traded Funds(ETFs)
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="International / Global Funds"
+                                id="international" checked>
+                            <label class="form-check-label" for="international">
+                                International / Global Funds
+                            </label>
+                        </div>
+                    </form>
+
+                    <button class="choosingRateButton">Open account</button>
+                </div>
+
+
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="alert">
+        <form class="alertForm" action="">
+            <h4>Enter into the Personal Cabinet</h4>
+            <input type="text" name="" id="" placeholder="login">
+            <input type="text" name="" id="" placeholder="password">
+            <button>Sign in</button>
+        </form>
+
+    </div>
     <!-- test -->
     <div class="testBlockWithImage">
 
@@ -202,7 +337,7 @@
 
                 <div class="resultButtons">
                     <button class="btnMoreInfo">More Info</button>
-                    <button class="btnOnPage continue">Open account</button>
+                    <button class="btnOnPage continue openBtn">Open account</button>
                 </div>
             </div>
 
