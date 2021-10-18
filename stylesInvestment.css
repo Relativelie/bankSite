@@ -1,7 +1,6 @@
 /*  */
 .openAccount {
     position: absolute;
-    z-index: 1;
     display: flex;
     flex-direction: column;
     height: 550px;
@@ -10,11 +9,16 @@
 }
 
 .forBlur {
-    backdrop-filter: blur(10px);
-    background-color: rgba(230, 230, 230, 0.1);
+    background-color: rgba(255, 255, 255, 0.301);
     padding: 20px;
     border-radius: 10px;
     margin-left: 170px;
+    text-shadow: 0 2px 10px black;
+    z-index: 2;
+}
+
+.carousel-indicators {
+    z-index: 1;
 }
 
 .openAccount h2 {
@@ -32,9 +36,10 @@
     padding: 10px 20px 10px 20px;
     margin-top: 20px;
     border-radius: 15px;
-    background-color: #5bd9dd;
+    background-color: #7ddaff;
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
+
 }
 .btnWithAnimation {
     animation-name: slide;
@@ -64,7 +69,7 @@
 .workHoursBlock {
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 400px;
 }
 
 .time {
@@ -194,25 +199,23 @@ padding-bottom: 30px;;
     padding-left: 5px;
 }
 
-/* .testBlock, .testImage {
-    display: none;
-} */
-
-.testBlockWithImage {
-    height: 400px;
-}
 
 
 
 .btnMoreInfo {
-    font-size: 20px;
     padding: 10px 20px 10px 20px;
     margin-top: 20px;
     border-radius: 15px;
     cursor: pointer;
-    font-family: 'Roboto', sans-serif;
     background-color: #fff;
     border: none;
+}
+
+.anchorMoreInfo {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
 }
 
 .btnMoreInfo:hover {
@@ -235,24 +238,144 @@ padding-bottom: 30px;;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 90%;
 }
 
 .result {
-    height: 100px;
-    width: 500px;
-    margin-left: 20px;
-    box-shadow: 0 0 10px rgb(212, 211, 211);
-    padding: 10px;
+    height: 200px;
+    width: 800px;
+    margin: 20px;
+    box-shadow: 5px 5px 5px 5px rgba(212, 211, 211, 0.411);
+    overflow: hidden;
+    background-color: #add7ff;
+}
+
+.testResultBlock {
+    position: relative;
+}
+
+.testResult {
+    width: 200px;
+    position: absolute;
+    right: 20px;
+    top: -160px;
+    text-align: center;
+}
+
+
+.conditions {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    height: 200px;
+    width: 120%;
+    
+}
+
+.conditionOne {
+    display: flex;
+}
+
+
+
+.conditionOneItem .insideItem {
+    width: 150%;
+}
+
+.conditionTwoItem .insideItem {
+    margin-left: -60px;
+    width: 250%;
+}
+
+.conditionThreeItem .insideItem {
+    margin-left: -60px;
+    width: 250%;
+}
+
+
+.conditionOne .smallItem:hover {
+    width: 855px;
+}
+
+.conditionTwo .smallItem:hover {
+    width: 700px;
+}
+
+.conditionThree .smallItem:hover {
+    width: 550px;
+}
+
+.conditionItem {
+    width: 170px;
+    margin-right: 80px;
+    -webkit-transform: skew(-30deg);
+    -moz-transform: skew(-30deg);
+    -o-transform: skew(-30deg);
+    transform: skew(-30deg);
+    transition: width .5s;
+    overflow: hidden;
+    height: 100%;
+    position:absolute;
+}
+
+.insideItem {
+    -webkit-transform: skew(30deg);
+    -moz-transform: skew(30deg);
+    -o-transform: skew(30deg);
+    transform: skew(30deg);
+    background-position: center left;
+    background-size: 855px;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.conditionOneItem .parInsideItem {
+    position: absolute;
+    left: 350px;
+    top: 60px;
+}
+
+
+.conditionTwoItem .parInsideItem {
+    position: absolute;
+    left: 260px;
+    top: 60px;
+}
+
+.conditionThreeItem .parInsideItem {
+    position: absolute;
+    left: 245px;
+    top: 60px;
+}
+
+.parInsideItem p {
+    font-family: 'Hahmlet', serif;
+    font-size: 35px;
+    text-shadow: 0 0 8px black;
+}
+
+.conditionTwoItem {
+    left: 20%;
+    z-index: 2;
+}
+
+.conditionOneItem {
+    z-index: 3;
+}
+
+.conditionThreeItem {
+    left: 40%;
+    z-index: 1;
 }
 
 .result h5 {
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Hahmlet', serif;
+    color: black;
 }
 
-.result p {
+.testResult p {
     font-family: 'Roboto', sans-serif;
+    color: black;
 }
 
 .resultButtons {
@@ -269,18 +392,16 @@ padding-bottom: 30px;;
 
 .openingBlock {
     position: fixed;
-    width: 40%;
+    width: 400px;
     padding: 20px;
-    background-color: rgba(214, 214, 214, 0.89);
-    backdrop-filter: blur(100px);
-    -webkit-backdrop-filter: blur(130px);
+    background-color: rgba(227, 237, 255, 0.979);
     border-radius: 0 20px 20px 0px;
     overflow: hidden;
-    bottom: 300px;
-    z-index: 2;
-    left: -1000px;
-    transition: all .5s ease;
-    border: 1px solid rgb(134, 134, 134);
+    top: 30%;
+    z-index: 3;
+    left: -800px;
+    transition: all .2s ease;
+    border: 1px solid rgb(195, 195, 195);
 }
 
 .openingHeader img {
@@ -465,17 +586,97 @@ padding-bottom: 30px;;
     z-index: 1;
 }
 
-.alertForm {
-    display: flex;
-    flex-direction: column;
 
+.finishOpeningAccountModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    display: none;
+    transition: all 1s ease;
 }
 
-.alertForm h4 {
+.modalBlock {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.backgroundForAllList {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(46, 46, 46, 0.459);
+    width: 100%;
+    height: 100%;
+}
+
+.modalBlock h4 {
     font-family: 'Hahmlet', serif;
 }
 
-.alertForm button {
+.modalBlock p {
+    font-family: 'Roboto', sans-serif;
+}
+
+.closeModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.finishOpeningAccountModal .closeModal {
+    transform: translate(480%, -400%);
+}
+
+.closeModal img {
+    height: 40px;
+}
+
+.login .closeModal {
+    transform: translate(480%, -430%);
+}
+
+.login {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    transition: all 1s ease;
+    display: none;
+}
+
+.login .backgroundForAllList {
+    z-index: -1
+}
+
+.login .modalBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.login .modalBlock h4 {
+    font-family: 'Hahmlet', serif;
+}
+
+.login .modalBlock button {
     background: #5bd9dd;
     border-radius: 10px;
     border: none;
@@ -484,4 +685,927 @@ padding-bottom: 30px;;
     color: #fff;
     margin-top: 20px;
     font-size: 17px;
+}
+
+.login .modalBlock input {
+    border: 1px solid rgb(143, 143, 143);
+    padding: 5px;
+    margin: 10px;
+    color:rgb(0, 0, 0);
+    width: 100%;
+}
+
+#wrongLogOrPass {
+    background-color: rgb(104, 4, 4);
+    border-radius: 10px;
+    padding: 15px;
+    position: absolute;
+    top: 60%;
+    width: 95%;
+    transition: all 2s ease;
+    display: none;
+}
+#wrongLogOrPass p {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+
+/* tariffs */
+.tariffsBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    padding: 20px;
+    box-shadow: 5px -3px 15px black;
+}
+
+.tariffsBlock h2 {
+    color: #fff;
+    font-family: 'Hahmlet', serif;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.tariffsItem {
+    width: 800px;
+    background-color: #add7ff;
+    margin-bottom: 19px;
+    background-image: url("imagesForInvestment/city.jpg");
+    background-size: 100%;
+    color:#fff;
+    box-shadow: 0 0 5px white;
+    text-shadow: 0 4px 10px black;
+}
+
+.backgroundFilter h5 {
+    font-family: 'Hahmlet', serif;
+    font-size: 25px;
+    margin: 0
+}
+
+.backgroundFilter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 10px
+}
+.prosAndCons {
+    display: flex;
+}
+
+
+.pros, .cons {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+.pros p, .cons p {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+
+.tariffsItemBalanced {
+    background-position: top center;
+    clip-path: inset(-5px -5px 5px -5px);
+}
+
+.tariffsItemFixed-Income {
+    background-position:  bottom 450px left 800px;
+    clip-path: inset(0 -5px 0 -5px);
+}
+
+.tariffsItemMitual {
+    background-position:  bottom 700px left 800px;
+    clip-path: inset(0 -5px 0 -5px);
+}
+
+.tariffsItemETFs {
+    background-position:  bottom 940px left 800px;
+    clip-path: inset(0 -5px 0 -5px);
+}
+
+.tariffsItemGlobal {
+    background-position:  bottom 1200px left 800px;
+    clip-path: inset(0 -5px -5px -5px);
+}
+
+
+/* STARS */
+
+.stars1 {
+    height: 140%;
+}
+
+/* CALL CENTER */
+.backPart {
+    position: absolute;
+    height: 650px;
+    width: 800px;
+    background-color: #add7ff;
+    -webkit-transform: skew(30deg);
+    -moz-transform: skew(-30deg);
+    -o-transform: skew(-30deg);
+    z-index: -1;
+    top: -40px;
+    right: 200px;
+}
+
+.backPartBlock {
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.callCenterBlock {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    height: 550px;
+    margin: 40px;
+    margin-left: 80px;
+    width: 80%
+}
+
+.callCenterFiguresItem {
+    -webkit-transform: skew(-30deg);
+    -moz-transform: skew(-30deg);
+    -o-transform: skew(-30deg);
+    position: relative;
+    overflow: hidden;
+}
+
+.callCenterFigures {
+    width: 80%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    top: -20px;
+}
+
+.backgroundCallCenterFigure {
+    background-size: 900px;
+    background-image: url("imagesForInvestment/friends.jpg");
+    -webkit-transform: skew(30deg);
+    -moz-transform: skew(30deg);
+    -o-transform: skew(30deg);
+    transform: skew(30deg);
+    width: 200%;
+    height: 200%;
+}
+
+.figuresOneBlock {
+    width: 400px;
+    height: 150px;
+    top: 90px;
+    right: 55px;
+}
+
+.figuresOne {
+    background-position: top -40px left -282px;
+}
+
+.figuresTwoBlock {
+    width: 350px;
+    height: 190px;
+    top: 40px;
+    right: 275px;
+    box-shadow: 0 0 5px black;
+    clip-path: inset(-5px 0 0 0);
+}
+
+.figuresThreeBlock {
+    width: 380px;
+    height: 140px;
+    top: 50px;
+    right: 290px;
+}
+
+.figuresTwo {
+    background-position: bottom -80px left -100px;
+}
+
+.figuresThree {
+    background-position: bottom 20px left -70px;
+}
+
+.figuresFour {
+    background-position: top -170px right 80px;
+}
+
+.figuresFourBlock {
+    width: 250px;
+    height: 150px;
+    top: -230px;
+    left: -25px;
+}
+
+.figuresSix {
+    background-position: bottom -150px right 0px;
+}
+
+.figuresSixBlock {
+    width: 200px;
+    height: 90px;
+    bottom: 620px;
+    left: 250px;
+}
+
+.callCenter {
+    height:100%;
+    width: 80%;
+    padding: 40px
+}
+
+
+.callCenterBlockItem {
+    position: absolute;
+    z-index: 1;
+    top: -1%;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.callCenterMain h3 {
+    font-family: 'Hahmlet', serif;
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 0 2px 10px black;
+}
+
+.servicesBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    margin-top: 60px;
+}
+
+.servicesItemOne h4, .servicesItemTwo h4 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    text-shadow: 0 2px 10px black;
+    color: #fff;
+    font-weight: bolder;
+}
+
+.servicesItemTwo {
+    margin-top: 40px;
+}
+
+.lastOpenButton {
+    z-index: 1;
+}
+
+@media all and (max-width: 1500px) {
+    .backPart {
+        right: 100px;
+    }
+}
+
+@media all and (max-width: 1400px) {
+    .testImage {
+        height: 250px;
+        padding-right: 20px;
+    }
+
+    .question {
+        margin-right: 20px;
+    }
+}
+
+@media all and (max-width: 1250px) {
+    .questionBlock {
+        width: 700px;
+        height: 71px;
+    }
+
+    .questionBlock h5 {
+        font-size: 20px;
+    }
+
+    .test h3 {
+        font-size: 30px;
+    }
+
+    .testForm label {
+        font-size: 18px;
+    }
+}
+
+@media all and (max-width: 1215px) {
+    .carousel-inner {
+        height: 600px !important;
+    }
+
+    .backPart {
+        width: 700px;
+    }
+}
+
+@media all and (max-width: 1050px) {
+    .testBlockWithImage {
+        margin-top: -50px;
+    }
+
+    .nuberOfQuestion {
+        font-size: 20px;
+    }
+
+    .questionBlock {
+        width: 600px;
+        height: inherit;
+    }
+
+    .carousel-inner {
+        height: 430px !important;
+    }
+
+    .openAccount {
+        height: 400px !important;
+    }
+
+    .forBlur {
+        padding: 10px
+    }
+
+    .forBlur h2 {
+        font-size: 30px;
+    }
+
+    .forBlur h4, .forBlur h3 {
+        font-size: 20px;
+    }
+
+    .btnOnPage {
+        font-size: 20px;
+    }
+
+    .openAccount h2, .openAccount h4 {
+        padding: 0;
+        margin-bottom: 15px;
+    }
+    
+    .timeItems p {
+        margin: 0;
+        font-size: 15px;
+    }
+
+    .backPart {
+        width: 500px;
+    }
+
+    .callCenterFigures {
+        width: 90%;
+    }
+
+    .btnOnPage, .backBtn, .btnMoreInfo a {
+        font-size: 17px;
+    }
+
+    .testForm label {
+        font-size: 15px;
+    }
+}
+
+@media all and (max-width: 950px) {
+    .testImage {
+        display: none;
+    }
+
+    .btnOnPage {
+        width: 150px
+    }
+}
+
+@media all and (max-width: 850px) {
+    .result {
+        height: 200px;
+        width: 700px;
+        margin: 0 0 20px 0;
+    }
+
+    .parInsideItem p {
+        font-size: 25px;
+    }
+
+    .testResult h5 {
+        font-size: 25px;
+    }
+
+    .conditionItem {
+        width: 130px;
+        margin-right: 0px;
+    }
+
+    .conditionTwoItem {
+        left: 18%;
+    }
+
+    .conditionThreeItem {
+        left: 36%;
+    }
+
+    .testResult h5 {
+        font-size: 20px;
+    }
+
+    .backPart {
+        width: 700px;
+        right: 300px;
+    }
+
+    .tariffsItem {
+        width: 700px
+    }
+    .backgroundFilter {
+        padding-bottom: 0;
+    }
+
+    .backgroundFilter h5 {
+        font-size: 18px;
+    }
+
+    .backgroundFilter p {
+        font-size: 15px;
+        margin: 0
+    }
+
+    .pros p {
+        font-size: 15px;
+    }
+
+    .pros, .cons {
+        width: 350px
+    }
+    
+    .tariffsItemFixed-Income {
+        background-position:  bottom 380px left 700px;
+    }
+    
+    .tariffsItemMitual {
+        background-position:  bottom 600px left 700px;
+    }
+    
+    .tariffsItemETFs {
+        background-position:  bottom 800px left 700px;
+    }
+    
+    .tariffsItemGlobal {
+        background-position:  bottom 1000px left 700px;
+    }
+}
+
+@media all and (max-width: 750px) {
+    .carousel-control-next, .carousel-control-prev {
+        top: 110px
+    }
+
+    .forBlur {
+        margin-left: 80px;
+    }
+
+    .forBlur h2 {
+        margin-bottom: 5px;
+    }
+
+    .workHoursBlock {
+        width: 300px;
+    }
+
+    .forBlur h2 {
+        font-size: 25px;
+    }
+
+    .forBlur h3 {
+        font-size: 18px;
+    }
+
+    .result {
+        width: 500px;
+    }
+
+    .conditionItem {
+        width: 80px;
+        -webkit-transform: skew(-20deg);
+        -moz-transform: skew(-20deg);
+        -o-transform: skew(-20deg);
+        transform: skew(-20deg);
+    }
+
+    .insideItem {
+        -webkit-transform: skew(20deg);
+        -moz-transform: skew(20deg);
+        -o-transform: skew(20deg);
+        transform: skew(20deg);
+    }
+
+    .conditionTwoItem {
+        left: 13%;
+    }
+
+    .conditionThreeItem {
+        left: 26%;
+    }
+
+    .parInsideItem {
+        left: 150px !important;
+    }
+
+    .carousel-inner {
+        height: 350px !important;
+    }
+
+    .openAccount {
+        height: 340px !important;
+    }
+
+    .tariffsItem {
+        width: 500px;
+    }
+
+    .tariffsBlock h2 {
+        font-size: 25px;
+    }
+
+    .backgroundFilter h5 {
+        font-size: 15px;
+    }
+
+    .backgroundFilter p, .prosAndCons li {
+        font-size: 12px;
+    }
+
+    .cons, .pros {
+        width: 200px;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .testForm div {
+        display: flex;
+        align-items: center;
+    }
+
+    .carousel-inner {
+        height: 310px !important;
+    }
+
+    .openAccount {
+        height: 300px !important;
+    }
+
+    .forBlur h2 {
+        font-size: 20px;
+    }
+
+    .forBlur h3 {
+        display: none;
+    }
+
+    .forBlur h4, .btnOnPage, .backBtn, .btnMoreInfo a{
+        font-size: 15px !important;
+    }
+
+    .btnOnPage {
+        width: 140px;
+        height: inherit;
+        margin-left: 10px;
+    }
+
+    .workHoursBlock {
+        width: 200px;
+    }
+
+    .questionBlock {
+        width: 400px;
+    }
+
+    .tariffsItemFixed-Income {
+        background-position:  bottom 300px left 500px;
+    }
+    
+    .tariffsItemMitual {
+        background-position:  bottom -290px left 500px;
+    }
+    
+    .tariffsItemETFs {
+        background-position:  bottom -170px left 500px;
+    }
+    
+    .tariffsItemGlobal {
+        background-position:  bottom left 500px;
+    }
+
+    .servicesBlock h4 {
+        font-size: 15px;
+    }
+
+    .servicesBlock h3 {
+        font-size: 25px;
+    }
+
+    .callCenterBlockItem {
+        width: 70%;
+    }
+
+    .openingHeader h4 {
+        font-size: 20px;
+    }
+
+    .methodHeader h4, .rates label, .personalInfoForm input, .methods label {
+        font-size: 15px;
+    }
+
+    .numberOfStep {
+        width: 20px;
+        height: 20px;
+    }
+
+    .numberOfStep h4 {
+        padding-top: 1px;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .tariffsItem {
+        width: 300px;
+    }
+
+    .questionBlock {
+        width: 100%;
+    }
+
+    .questionBlock h5, .questionBlock p {
+        font-size: 15px;
+    }
+
+    .test h3 {
+        font-size: 20px;
+        padding: 0;
+    }
+
+    .testForm label {
+        font-size: 12px;
+    }
+
+    .figuresOneBlock {
+        width: 200px;
+        right: 0;
+    }
+
+    .figuresTwoBlock {
+        width: 350px;
+        left: 0px;
+    }
+
+    .figuresThreeBlock {
+        display: none;
+    }
+
+    .figuresFourBlock {
+        display: none;
+    }
+
+    .callCenterBlock {
+        margin-left: 0;
+    }
+
+    .pros, .cons {
+        width: 150px;
+    }
+
+    .tariffsItemFixed-Income {
+        background-position:  bottom 330px left 450px;
+    }
+    
+    .tariffsItemMitual {
+        background-position:  bottom -350px left 450px;
+    }
+    
+    .tariffsItemETFs {
+        background-position:  bottom -100px left 450px;
+    }
+    
+    .tariffsItemGlobal {
+        background-position:  bottom left 450px;
+    }
+
+    .figuresOne {
+        background-position: top -40px left -262px;
+    } 
+
+    .figuresTwo {
+        background-position: bottom -80px left -100px;
+    }
+
+    .tariffsItem {
+        background-size: 200%;
+    }
+
+    .callCenterBlock {
+        height: 300px;
+        width: 100%;
+    }
+    
+    .callCenterFigures {
+        top: -120px;
+        left: -20px
+    }
+
+    .backPart {
+        display: none;
+    }
+
+    .callCenterBlockItem {
+        top: -13%;
+    }
+
+    .servicesItemTwo {
+        margin-top: 0;
+    }
+
+    .callCenterMain {
+        margin-top: 30px;
+    }
+
+    .openingBlock {
+        width: 250px
+    }
+
+    .insideOpeningBlock {
+        padding-left: 20px;
+    }
+
+    .carousel-item {
+        margin-top: 100px;
+    }
+
+    .carousel-inner {
+        height: 300px !important;
+    }
+
+    .forBlur {
+        position: relative;
+        top: -140px;
+        left: 20%;
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .forBlur h2{
+        font-size: 15px;
+    }
+
+    .btnOnPage {
+        padding: 5px;
+        margin: 0;
+        font-size: 12px !important;
+    }
+
+    .backBtn {
+        font-size: 12px !important;
+        margin: 0;
+    }
+
+    .forBlur h3, .forBlur h4 {
+        font-size: 10px !important;
+    }
+
+    .testButtons {
+        width: 100%;
+    }
+
+    .test {
+        padding: 7px;
+    }
+
+    .question {
+        margin: 0;
+        width: 90%;
+    }
+
+    .testForm label {
+        margin-left: 5px;
+    }
+    .testForm input {
+        margin-left: 5px
+    }
+    
+    .hoursPar {
+        height: inherit;
+    }
+
+    .timeText {
+        font-size: 12px !important;
+    }
+
+    .appBtn {
+        width: 90px;
+        height: 25px;
+    }
+
+    .navbar-nav {
+        background-color: rgba(39, 36, 36, 0.726);
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .contactMeBlock p, .contactMeBlock a {
+        font-size: 10px;
+    }
+
+    .result {
+        width: 300px;
+    }
+
+    .conditionTwoItem {
+        left:1%
+    }
+
+    .conditionThreeItem {
+        left: 11%
+    }
+
+    .conditionOneItem {
+        left: -13%
+    }
+
+    .testResult h5 {
+        font-size: 15px;
+    }
+    
+    .parInsideItem p {
+        font-size: 20px;
+    }
+
+    .testResult p {
+        font-size: 10px;
+    }
+
+    .testResult {
+        right: 0;
+        width: 150px;
+        top: -150px;
+    }
+    
+    .parInsideItem {
+        width: 140px;
+    }
+
+    .btnMoreInfo {
+        margin: 0;
+    }
+}
+
+@media all and (max-width: 320px) {
+    .carousel-inner {
+        height: 270px !important;
+    }
+
+    .forBlur {
+        left: 10%;
+    }
+
+    .tariffsItem {
+        width: 250px;
+    }
+
+    .pros, .cons {
+        width: 135px;
+    }
+
+    .tariffsItemFixed-Income {
+        background-position:  bottom 330px left 375px;
+    }
+    
+    .tariffsItemMitual {
+        background-position:  bottom -200px left 375px;
+    }
+    
+    .tariffsItemETFs {
+        background-position:  bottom -20px left 375px;
+    }
+    
+    .tariffsItemGlobal {
+        background-position:  bottom left 375px;
+    }
+
+    .numbers a, .numbers p {
+        font-size: 10px;
+    }
+
 }

@@ -22,7 +22,7 @@
 
 <body>
     <!-- MENU -->
-    <nav class="navbar navbar-expand-lg menu">
+    <nav class="navbar navbar-expand-lg menu navbar-dark">
         <div class="container-fluid">
             <div class="navContainer">
                 <a class="navbar-brand bank_name" href="#">Bank Of Future</a>
@@ -35,15 +35,6 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 bank_products">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Cards</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Contribution</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Loan</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.html">Mortgage</a>
                     </li>
                     <li class="nav-item">
@@ -51,10 +42,6 @@
                     </li>
 
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
             </div>
         </div>
 
@@ -72,7 +59,7 @@
                 aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-            <div class="carousel-item active">
+            <!-- <div class="carousel-item active">
                 <div class="openAccount">
                     <div class="forBlur">
                         <h2>Investing with Bank of Feature</h2>
@@ -82,11 +69,11 @@
 
                 </div>
                 <img src="imagesForInvestment/apps.jpg" class="d-block w-100" alt="openAccount">
-            </div>
+            </div> -->
 
 
 
-            <!-- <div class="carousel-item">
+            <div class="carousel-item active">
                 <div class="openAccount">
                     <div class="forBlur">
                         <h2>Working hours</h2>
@@ -95,10 +82,6 @@
                         <div class="workHoursContainer">
                             <div class="workHoursBlock">
                                 <div class="time">
-                                    <div class="timeItems">
-                                        <p class="hoursPar workDaysLeft">10</p>
-                                        <p class="timeText">Days</p>
-                                    </div>
                                     <div class="timeItems">
                                         <p class="hoursPar workHoursLeft">12</p>
                                         <p class="timeText">Hours</p>
@@ -119,17 +102,20 @@
                 <img src="imagesForInvestment/workingHour2.jpg" class="d-block w-100" alt="working hours">
             </div>
 
-            <div class="carousel-item">
+            <!-- <div class="carousel-item">
                 <div class="openAccount">
                     <div class="forBlur">
                         <h2>Stock prices may be observed here</h2>
                         <h3>Trading is available in our app</h3>
-                        <a href="#"> <button class="appBtn googleplay">
+                        <div class="appBtns">
+                            <a href="#"> <button class="appBtn googleplay">
                             </button></a>
                         <a href="#">
                             <button class="appBtn appStore">
                             </button>
                         </a>
+                        </div>
+
 
                     </div>
 
@@ -263,7 +249,7 @@
                         </div>
                     </form>
 
-                    <button class="choosingRateButton">Open account</button>
+                    <button class="choosingRateButton finishOpeningAccount">Open account</button>
                 </div>
 
 
@@ -275,14 +261,32 @@
     </div>
 
 
+    <div class="finishOpeningAccountModal">
+        <div class="backgroundForAllList"></div>
+        <div class="closeModal">
+            <img id="closefinishOpeningAccountModal" src="imagesForInvestment/close.png" alt="">
+        </div>
+        <div class="modalBlock">
+            <h4>Congratulation! You open your own broker account!</h4>
+            <p>We will call you back later to clarify the details</p>
+            <p>Thank you for the trust</p>
+            <p>You can also see our other products: mortgages and cards</p>
+        </div>
+    </div>
 
-
-    <div class="alert">
-        <form class="alertForm" action="">
+    <div class="login">
+        <div class="backgroundForAllList"></div>
+        <div class="closeModal">
+            <img id="closelogin" src="imagesForInvestment/close.png" alt="">
+        </div>
+        <form class="modalBlock" action="">
             <h4>Enter into the Personal Cabinet</h4>
-            <input type="text" name="" id="" placeholder="login">
-            <input type="text" name="" id="" placeholder="password">
-            <button>Sign in</button>
+            <input type="text" name="" id="login" placeholder="login">
+            <input type="password" name="" id="password" placeholder="password">
+            <div id="wrongLogOrPass">
+                <p>Check that your username and password are written correctly.</p>
+            </div>
+            <button id="signIn">Sign in</button>
         </form>
 
     </div>
@@ -323,32 +327,310 @@
 
         </div>
         <div class="results">
-            <img class="resultImage" src="imagesForInvestment/euroTestResults.png" alt="">
 
             <div class="resultsBlock">
                 <div class="result resultOne">
-                    <h5>gfrfgf</h5>
-                    <p>Expected income:</p>
+                    <div class="conditions">
+                        <div class="conditionOne">
+                            <div class="conditionItem conditionOneItem smallItem">
+                                <div class="insideItem">
+                                    <div class="parInsideItem">
+                                        <p>ffdhgfdsdfghjkjs</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="conditionTwo">
+                            <div class="conditionItem conditionTwoItem smallItem">
+                                <div class="insideItem">
+                                    <div class="parInsideItem">
+                                        <p>ffdhgfdsdfghjkjs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="conditionThree">
+                            <div class="conditionItem conditionThreeItem smallItem">
+                                <div class="insideItem">
+                                    <div class="parInsideItem">
+                                        <p>ffdhgfdsdfghjkjs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testResultBlock">
+                        <div class="testResult">
+                            <h5></h5>
+                            <p></p>
+
+                            <p class="statement"></p>
+                        </div>
+                    </div>
+
+
                 </div>
+
                 <div class="result resultTwo">
-                    <h5>hgfghgf</h5>
-                    <p>Expected income:</p>
+                    <div class="conditions">
+                        <div class="conditionOne">
+                            <div class="conditionItem conditionOneItem smallItem">
+                                <div class="insideItem">
+                                    <div class="parInsideItem">
+                                        <p>ffdhgfdsdfghjkjs</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="conditionTwo">
+                            <div class="conditionItem conditionTwoItem smallItem">
+                                <div class="insideItem">
+                                    <div class="parInsideItem">
+                                        <p>ffdhgfdsdfghjkjs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="conditionThree">
+                            <div class="conditionItem conditionThreeItem smallItem">
+                                <div class="insideItem">
+                                    <div class="parInsideItem">
+                                        <p>ffdhgfdsdfghjkjs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testResultBlock">
+                        <div class="testResult">
+                            <h5></h5>
+                            <p></p>
+
+                            <p class="statement"></p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="resultButtons">
-                    <button class="btnMoreInfo">More Info</button>
+                    <button class="btnMoreInfo"><a class="anchorMoreInfo" href="#tariffs">More Info</a></button>
                     <button class="btnOnPage continue openBtn">Open account</button>
                 </div>
             </div>
+        </div>
+    </div>
 
+    <div class='stars1'>
+        <div class="stars">
+        </div>
+        <div class="stars">
+        </div>
+    </div>
+
+    <!-- TARIFFS -->
+    <div class="tariffsBlock" id="tariffs">
+        <h2>Our tariffs</h2>
+        <div class="tariffs">
+            <div class="tariffsItem tariffsItemBalanced">
+                <div class="backgroundFilter">
+                    <h5>Balanced Founds</h5>
+                    <p class="income">Expected income: 5-7%</p>
+                    <div class="prosAndCons">
+                        <div class="pros">
+                            <p>Advanteges</p>
+                            <ul>
+                                <li>Diversified, constantly rebalanced portfolio</li>
+                                <li>Low expense ratios</li>
+                                <li>Less volatility</li>
+                                <li>Low-risk</li>
+                            </ul>
+                        </div>
+
+                        <div class="cons">
+                            <p>Disadvantages</p>
+                            <ul>
+                                <li>Fixed asset allocations</li>
+                                <li>Unsuited for tax-shielding strategies</li>
+                                <li>"The usual suspects" investments</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+            <div class="tariffsItem tariffsItemFixed-Income">
+                <div class="backgroundFilter">
+
+
+                    <h5>Fixed-Income</h5>
+                    <p class="income">Expected income: 7-8%</p>
+                    <div class="prosAndCons">
+                        <div class="pros">
+                            <p>Advanteges</p>
+                            <ul>
+                                <li>Regular Income</li>
+                                <li>Priority at the time of Liquidation</li>
+                                <li>Safe deal</li>
+                            </ul>
+                        </div>
+
+                        <div class="cons">
+                            <p>Disadvantages</p>
+                            <ul>
+                                <li>Interest rate risk</li>
+                                <li>Credit Risk</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tariffsItem tariffsItemMitual">
+                <div class="backgroundFilter">
+
+                    <h5>Mutual</h5>
+                    <p class="income">Expected income: 8-11%</p>
+                    <div class="prosAndCons">
+                        <div class="pros">
+                            <p>Advanteges</p>
+                            <ul>
+                                <li>Advanced Portfolio Management</li>
+                                <li>Dividend Reinvestment</li>
+                                <li>Risk Reduction (Safety)</li>
+                                <li>Convenience and Fair Pricing</li>
+                            </ul>
+                        </div>
+
+                        <div class="cons">
+                            <p>Disadvantages</p>
+                            <ul>
+                                <li>High Expense Ratios and Sales Charges</li>
+                                <li>Management Abuses</li>
+                                <li>Tax Inefficiency</li>
+                                <li>Poor Trade Execution</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tariffsItem tariffsItemETFs">
+                <div class="backgroundFilter">
+
+                    <h5>ETFs</h5>
+                    <p class="income">Expected income: 12-15%</p>
+                    <div class="prosAndCons">
+                        <div class="pros">
+                            <p>Advanteges</p>
+                            <ul>
+                                <li>Lower Fees</li>
+                                <li>Immediately Reinvested Dividends</li>
+                                <li>Limited Capital Gains Tax</li>
+                                <li>Lower Discount or Premium in Price</li>
+                            </ul>
+                        </div>
+
+                        <div class="cons">
+                            <p>Disadvantages</p>
+                            <ul>
+                                <li>Less Diversification</li>
+                                <li>Intraday Pricing Might Be Overkill</li>
+                                <li>Costs Could Be Higher</li>
+                                <li>Lower Dividend Yields</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tariffsItem tariffsItemGlobal">
+                <div class="backgroundFilter">
+
+                    <h5>Global</h5>
+                    <p class="income">Expected income: 12-15%</p>
+                    <div class="prosAndCons">
+                        <div class="pros">
+                            <p>Advanteges</p>
+                            <ul>
+                                <li>Dividend Reinvestment</li>
+                                <li>Risk Reduction (Safety)</li>
+                                <li>Convenience and Fair Pricing</li>
+                            </ul>
+                        </div>
+
+                        <div class="cons">
+                            <p>Disadvantages</p>
+                            <ul>
+                                <li>High Expense Ratios and Sales Charges</li>
+                                <li>Management Abuses</li>
+                                <li>Tax Inefficiency</li>
+                                <li>Poor Trade Execution</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="callCenterBlock">
+        <div class="callCenter">
+            <div class="callCenterBlockItem">
+                <div class="servicesBlock">
+
+
+                    <div class="servicesItemOne">
+                        <h4>We have a free hotline 24/7. <br>
+                            Сall us and we will definitely help you</h4>
+                    </div>
+
+                    <div class="callCenterMain">
+                        <h3>Сould not choose a tariff?</h3>
+                    </div>
+
+                    <div class="servicesItemTwo">
+                         <h4>You may open account and change tariff <br> after 10 days without any loss or use our
+                            services</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callCenterFigures">
+                <div class="callCenterFiguresItem figuresOneBlock">
+                    <div class="backgroundCallCenterFigure figuresOne">
+
+                    </div>
+                </div>
+                <div class="callCenterFiguresItem figuresTwoBlock">
+                    <div class="backgroundCallCenterFigure figuresTwo">
+
+                    </div>
+                </div>
+                <div class="callCenterFiguresItem figuresThreeBlock">
+                    <div class="backgroundCallCenterFigure figuresThree">
+
+                    </div>
+                </div>
+                <div class="callCenterFiguresItem figuresFourBlock">
+                    <div class="backgroundCallCenterFigure figuresFour">
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="backPartBlock">
+                <div class="backPart"></div>
+            </div>
 
 
         </div>
-
+        <div class="lastOpenButton">
+            <button class="btnOnPage btnWithAnimation openBtn">Open account</button>
+        </div>
     </div>
-    </div>
-
-
 
 
 

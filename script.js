@@ -24,7 +24,7 @@ let observer = new IntersectionObserver(function (e) {
         showTypesOfMortgages();
         observer.disconnect();
     }
-}, { threshold: [0.38] });
+}, { threshold: [0.4] });
 
 observer.observe(document.querySelector(".tab-content"));
 

@@ -16,7 +16,13 @@
 }
 
 .menu {
-    z-index: 2;
+    z-index: 3;
+    position: absolute !important;
+    width: 100%;
+}
+
+.mainMenu {
+    
 }
 
 /* VIDEO */
@@ -193,7 +199,7 @@
 }
 
 .mortgageHeader {
-    font-size: 30px;
+    font-size: 25px;
     margin-right: auto;
     font-family: 'Roboto', sans-serif;
 }
@@ -387,7 +393,11 @@ select, input {
     opacity: 1;
 }
 
-.odd_block {
+.infoAboutCalculator p {
+    margin: 0;
+}
+
+.oddBlock {
     position: relative;
 }
 
@@ -786,280 +796,360 @@ background: linear-gradient(90deg, rgba(119,172,241,1) 0%, rgba(62,219,240,1) 43
     100% { transform:rotate(-420deg);
 }}
 
-/* 420 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media all and (max-width: 1100px) {
-    #families_video {
-        width: 800px;
-    }
-}
-
-@media all and (max-width: 800px) {
-    
-    #families_video {
-        width: 90%;
-    }
-
-    .social_network {
-        flex-direction: column;
-    }
-    .number_block {
-        align-items: center;
-    }
-
-    /* additional info */
-
-
-    .main_additional_block {
-        display: block;
-    }
-
-    .documents {
-        font-size: 24px;
-    }
-
-    .menu_items {
+@media all and (max-width: 1160px) {
+    .mortgageHeader {
         font-size: 20px;
-        padding: 0px;
+        font-weight: bolder;
     }
 
-    .additional_header_name {
-        font-size: 25px;
-    }
-
-    .additionall_block {
-        padding: 5px;
-    }
-
-
-    .active_statement {
-        margin-top: 45px;
-    }
-
-
-    /* calculate */
-
-    .calculate_block {
-        padding: 0px;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .calculateItems {
-        margin-bottom: 10px;
-        padding: none;
-    }
-
-    .calculate_header_name {
-        font-size: 25px;
-    }
-
-    .resultName {
-        font-size: 13px;
-    }
-
-    .result {
+    .conditionMeaning {
         font-size: 15px;
     }
 
-    .resultBlock {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+    .tableText h4 {
+        font-size: 15px !important;
     }
 
-    .btn {
-        font-size: 20px;
-        width: 250px;
+    .tableText p {
+        font-size: 13px !important;
+        padding: 0;
     }
 
-
-    .apply {
-        position: inherit;
-        margin-top: 140px;
-        margin-left: -220px;
+    .conditionImage {
+        width: 150px;
     }
 
-    /* services */
-    .service_image {
-        width: 130px;
+    .textOfMortgages {
+        margin: 0
     }
 
-    .service_items {
-        padding: 20px;
-        margin: 0px;
+    .mortgageNameWithBtn {
+        justify-content: space-around;
     }
 
-    .service_header {
-        text-align: center;
+    .conditionMeaning {
+        padding-left: 20px;
     }
 
-    .condition_image {
+    .btnMore {
+        margin: 0;
+    }
+
+    .mortgageNameWithBtn {
+        padding: 10px;
+    }
+
+    .stars1 {
+        height: 70%;
+    }
+}
+
+
+@media all and (max-width: 930px) {
+    .conditionImage {
         display: none;
     }
 
-    .mortgage_name_with_btn {
-        justify-content: space-between;
+    .mainVideoOnPage, .myText {
+        height: 300px;
     }
 
-    .mobile_indoor_block, .text_of_mortgage {
-        width: auto;
-        margin: 20px 20px 0 20px;
+    .videoWithHouse {
+        height: 500px;
     }
 
-    .even_block {
-        background-color: #f4c7ab;
-    }
-    
-    .odd_block {
-        background-color: #fff5eb;
+    #videoWithHomeFront {
+        width: 100%;
     }
 
-    select {
-        background-color: white;
+    .textOnVideo {
+        font-size: 20px;
+    }
+
+    .calculateBlock {
+        width: 600px;
+    }
+
+    .solarSystem {
+        right: 100px;
+    }
+
+    .calculateItems, .locationTaxes {
+        width: 248px;
+    }
+
+    .calculateItems input, .calculateItem select {
+        font-size: 15px;
+    }
+
+    .inputCalculateValue {
+        height: 50px;
+    }
+
+    .infoAboutCalculatorImg {
+        right: 22%;
+        top: 15.5%;
+    }
+
+    .infoAboutCalculator {
+        top: -20px;
+    }
+
+    .rectangularBlock {
+        width: 60%
+    }
+
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.493) !important;
+        padding: 0 10px;
     }
 }
 
 
-
-@media all and (max-width: 500px) {
-
-/* Additional information: mobile */
-    .documents {
-        font-size: 14px;
+@media all and (max-width: 790px) {
+    .mainVideoOnPage, .myText {
+        height: 200px;
     }
 
-
-
-/*  block of numbers */
-    .phone_number_style {
-        font-size: 15px;
-    }
-
-    .numbers {
-        background-size: 110% ;
-    }
-
-    .social_network_img {
-        filter: none;
-    }
-
-    .number_pharagraph {
-        font-size: 15px;
-    }
-
-    .numbers_item {
-        padding: 0px;
-        margin-left: 20px;
-    }
-
-
-    .social_network_img {
-        height: 40px;
-    }
-
-
-    
-    /* calculate */
-    .apply {
-        position: inherit;
-        margin-top: 30px;
-        margin-left: -50px;
-    }
-
-
-
-    /* mortgage types */
-    .mortgage_header_name {
-        font-size: 25px;
-        text-align: center;
-    }
-
-    .mortgage_name_with_btn {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .mortgage_condition {
-        margin-top: 15px;
-        padding: 5px;
-    }
-
-    .mortgage_condition_items {
-        margin-top: 0px;
-        padding: 0px;
-    }
-
-    .rectangular_block {
-        margin-top: 20px;
-    }
-
-
-
-/* menu */
-
-    .menu_items {
-        font-size: 13px;
-        padding: 0px;
-    }
-
-    .active_statement {
-        margin-top: 40px;
-    }
-
-    .type_of_mortgage_items {
-        font-size: 12px;
-        padding: 5px;
-    }
-
-    .mortgage_condition {
-        flex-direction: column;
-    }
-
-    .type_of_mortgage {
-        align-items: flex-start;
-    }
-
-    .condition_meaning, .paragraph_style, 
-    .offer_on_new_year, select, input, 
-    .fieldNameForCalculate {
-        font-size: 13px;
-    }
-
-
-    .even_block {
-        background-color: #ffe8df;
-    }
-    
-    .odd_block, input, select {
-        background-color: white;
-    }
-
-    #families_video {
-        max-width: 100%;
+    .rectangularBlock {
+        width: 70%
     }
 }
 
-@media all and (max-width: 300px) {
-    .type_of_mortgage_items, .menu_items {
+@media all and (max-width: 700px) {
+    .statement .nav-link  {
+        font-size: 12px !important;
+    }
+
+    .calculateBlock {
+        width: 500px;
+        padding: 10px;
+    }
+
+    .solarSystem {
+        right: 120px;
+    }
+
+    .resultItemsBlock {
+        width: 130px;
+    }
+
+    .infoAboutCalculator {
+        top: -50px
+    }
+
+    .infoAboutCalculator p {
         font-size: 10px;
     }
 
-    .value_for_calculate {
-        padding: 10px 5px 10px 5px;
+    .infoAboutCalculatorImg {
+        top: 19%;
+        right: 17%
+    }
+    .contactInfo {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .infoAboutCalculator {
+        top: 20px;
+        width: 30%;
     }
 }
 
+@media all and (max-width: 600px) {
+    .mainVideoOnPage, .myText {
+        height: 150px;
+    }
+
+    .rectangularBlock {
+        width: 80%
+    }
+
+    .infoAboutCalculator {
+        right: 10px;
+    }
+
+    .numbersItem a {
+        font-size: 15px;
+    }
+
+    .numbersItem p {
+        font-size: 12px;
+    }
+
+    .statement .nav-link {
+        padding: 5px
+    }
+
+}
+
+
+@media all and (max-width: 520px) {
+    .calculateBlock {
+        width: 300px;
+        border: none;
+        flex-direction: column;
+        height: 500px;
+        margin: 0;
+    }
+
+    .infoAboutCalculatorImg {
+        top: 15%;
+        right: 5%
+    }
+
+    .infoAboutCalculator {
+        right: -20px;
+        top: 0px;
+        width: 32%
+    }
+    
+    .backgroundWithchosenPlanet {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+        background-size: 550px;
+    }
+
+    .resultBlock {
+        margin: 0;
+        width: 350px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .solarSystem {
+        right: 130px;
+        z-index: 1;
+    }
+
+    .resultItem {
+        flex: 1;
+        margin: 5px;
+    }
+
+    .resultItem p {
+        margin: 0;
+        padding:  0 5px;
+    }
+
+    .resultItemsBlock {
+        width: 300px;
+        padding: 5px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background-color: rgba(0, 0, 0, 0.39);
+        z-index: 3;
+    }
+
+    .calculateBlock form {
+        z-index: 3;
+    }
+
+    #videoWithHomeFront {
+        margin-top: 100px;
+    }
+}
+
+@media all and (max-width: 455px) {
+    .statement .nav-link {
+        width: 80px;
+    }
+
+    .mortgageHeader {
+        font-size: 17px;
+    }
+
+    .conditionMeaning {
+        font-size: 13px;
+    }
+
+    .textMore {
+        font-size: 13px;
+    }
+
+    .btnMore:hover:after {
+        font-size: 13px;
+    }
+
+    .btnMore {
+        width: 100px !important;
+    }
+
+    .mortgageNameWithBtn {
+        justify-content: space-between;
+    }
+
+    .textOnVideo {
+        font-size: 15px;
+    }
+    .calculateHeaderName {
+        font-size: 25px;
+    }
+
+    .baseBlock .oddBlock .parStyle {
+        font-size: 12px;
+    }
+
+    .infoAboutCalculator {
+        top: -30px;
+    }
+
+    .infoAboutCalculatorImg {
+        top: 14%;
+    }
+
+    .numbersItem {
+        padding: 0;
+        margin-right: 15px;
+    }
+
+    .contactMe, .contactMeLink {
+        font-size: 15px;
+    }
+
+    .socialNetworkItemImg {
+        height: 40px;
+    }
+}
+
+@media all and (max-width: 320px) {
+    .statement .nav-link {
+        font-size: 8px !important;
+        width: 70px;
+    }
+
+    .navbar-brand {
+        font-size: 15px;
+    }
+
+    .mainVideoOnPage {
+        height: 100px;
+    }
+
+    .textOnVideo {
+        display: none;
+    }
+
+    .infoAboutCalculator {
+        right: 0;
+    }
+
+    .calculateHeaderName {
+        font-size: 20px;
+    }
+
+    .infoAboutCalculatorImg {
+        top: 13%;
+    }
+
+    .calculateBlock {
+        width: 270px;
+    }
+
+    .baseBlock .oddBlock .parStyle {
+        font-size: 10px;
+    }
+}
