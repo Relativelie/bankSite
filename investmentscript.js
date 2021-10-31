@@ -1,8 +1,3 @@
-// import {showContactTextObserver} from "./script.js";
-
-// import {showContactTextObserver} from "./script.js";
-// showContactTextObserver.observe(document.querySelector(".footer"));
-
 const testQuestions = [
     "How long have you been investing?",
     "Imagine the stock market has taken a dive. The Dow is down more than 15%. What do you do?",
@@ -240,9 +235,9 @@ function wrongLogOrPass() {
 const countOfStepDict = {
     "openingMethodHeaderName": [0, "methods"],
     "personalInfoHeaderName": [1, "personalInfoForm"],
-    "choosingRateHeaderName": [2, "rates"], 
+    "choosingRateHeaderName": [2, "rates"],
     "methods": 0,
-    "personalInfoForm": 1, 
+    "personalInfoForm": 1,
     "rates": 2
 }
 
@@ -338,7 +333,7 @@ function backOneStep(e) {
         }
     }
 
-    if (!(currentStep==="rates" && backStep ==="openingMethodHeaderName") && currentStep!=countOfStepDict[backStep][1] && countOfStepDict[backStep][0]<countOfStepDict[currentStep]) {
+    if (!(currentStep === "rates" && backStep === "openingMethodHeaderName") && currentStep != countOfStepDict[backStep][1] && countOfStepDict[backStep][0] < countOfStepDict[currentStep]) {
         allOpeningBlock[countOfStepDict[backStep][0]].style.display = "block";
         allOpeningBlock[countOfStepDict[backStep][0] + 1].style.display = "none";
         allStepsText[countOfStepDict[backStep][0]].textContent = countOfStepDict[backStep][0] + 1;
@@ -352,7 +347,7 @@ function backOneStep(e) {
         }
     }
 
-    }
+}
 
 
 document.querySelector(".method button").addEventListener("click", openingAccount);
@@ -509,3 +504,42 @@ let showContactTextObserver = new IntersectionObserver(function (e) {
 }, { threshold: [0.4] });
 
 showContactTextObserver.observe(document.querySelector(".footer"));
+
+
+
+function calculateTimeBeforeClosing() {
+
+    const msInSecond = 1000;
+    const msInMinute = 60 * 1000;
+    const msInHour = 60 * 60 * 1000;
+    const msInDay = 24 * 60 * 60 * 1000;
+
+
+    const today = new Date();
+    let hours = parseInt(today.getHours());
+    let minutes = parseInt(today.getMinutes());
+    let seconds = parseInt(today.getSeconds());
+
+    let sleepingTime = [23, 0, 1, 2, 3, 4, 5, 6, 7];
+    if (sleepingTime.indexOf(hours) === -1 ) {
+        document.querySelector(".timeToSleep").style.display = "none";
+        document.querySelector(".timeToWork").style.display = "block";
+        document.querySelector(".workHoursLeft").textContent = 23 - hours;
+        document.querySelector(".workMinutesLeft").textContent = 60 - minutes;
+        document.querySelector(".workSecondsLeft").textContent = 60 - seconds;
+    }
+    
+    else {
+        document.querySelector(".timeToSleep").style.display = "block";
+        document.querySelector(".timeToWork").style.display = "none";
+    }
+
+
+    
+
+
+}
+
+let myInterval = setInterval(function () {
+    calculateTimeBeforeClosing();
+}, 1000)
