@@ -1583,6 +1583,15 @@ padding-bottom: 30px;;
     .btnMoreInfo {
         margin: 0;
     }
+
+    .modalBlock {
+        width: 300px;
+    }
+
+    .closeModal {
+        left: 0%;
+        top: 47.5%;
+    }
 }
 
 @media all and (max-width: 320px) {
