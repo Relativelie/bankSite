@@ -1454,7 +1454,8 @@ padding-bottom: 30px;;
     }
 
     .openingBlock {
-        width: 250px
+        width: 250px;
+        top: 10%;
     }
 
     .insideOpeningBlock {

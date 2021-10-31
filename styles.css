@@ -1113,6 +1113,10 @@ background: linear-gradient(90deg, rgba(119,172,241,1) 0%, rgba(62,219,240,1) 43
     .socialNetworkItemImg {
         height: 40px;
     }
+
+    .resultItem p {
+        font-size: 12px;
+    }
 }
 
 @media all and (max-width: 320px) {

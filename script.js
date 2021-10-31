@@ -230,9 +230,11 @@ function animatedValue(value, id) {
 
 
 // value from the front
-costRange.addEventListener("click", calculations);
-initialFeeRange.addEventListener("click", calculations);
-mortgageTermRange.addEventListener("click", calculations);
+costRange.addEventListener("input", calculations);
+initialFeeRange.addEventListener("input", calculations);
+mortgageTermRange.addEventListener("input", calculations);
+
+
 showCostValue.addEventListener("input", calculations);
 showInitialFeeValue.addEventListener("input", calculations);
 showMortgageTermValue.addEventListener("input", calculations);
