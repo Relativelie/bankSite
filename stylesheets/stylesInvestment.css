@@ -103,12 +103,12 @@
 
 /* APPS */
 .googleplay {
-    background-image: url("imagesForInvestment/googleplay.png");
+    background-image: url("../imagesForInvestment/googleplay.png");
 
 }
 
 .appStore {
-    background-image: url("imagesForInvestment/appstore.png");
+    background-image: url("../imagesForInvestment/appstore.png");
 }
 
 .appBtn {
@@ -734,7 +734,7 @@ padding-bottom: 30px;;
     width: 800px;
     background-color: #add7ff;
     margin-bottom: 19px;
-    background-image: url("imagesForInvestment/city.jpg");
+    background-image: url("../imagesForInvestment/city.jpg");
     background-size: 100%;
     color:#fff;
     box-shadow: 0 0 5px white;
@@ -854,7 +854,7 @@ padding-bottom: 30px;;
 
 .backgroundCallCenterFigure {
     background-size: 900px;
-    background-image: url("imagesForInvestment/friends.jpg");
+    background-image: url("../imagesForInvestment/friends.jpg");
     -webkit-transform: skew(30deg);
     -moz-transform: skew(30deg);
     -o-transform: skew(30deg);
@@ -1589,7 +1589,7 @@ padding-bottom: 30px;;
     }
 
     .closeModal {
-        left: 0%;
+        left: -8%;
         top: 47.5%;
     }
 }

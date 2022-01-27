@@ -178,23 +178,23 @@
 }
 
 #nav-home {
-    background-image: url("images/earth.jpg");
+    background-image: url("../images/earth.jpg");
     box-shadow: 0 0 5px black;
 }
 
 #nav-profile {
-    background-image: url("images/mars.jpg");
+    background-image: url("../images/mars.jpg");
     box-shadow: 0 0 5px rgb(175, 44, 21);
 }
 
 
 #nav-contact {
-    background-image: url("images/venus.jpg");
+    background-image: url("../images/venus.jpg");
     box-shadow: 0 0 5px black;
 }
 
 #nav-universe {
-    background-image: url("images/universe.jpg");
+    background-image: url("../images/universe.jpg");
     box-shadow: 0 0 5px black;
 }
 
@@ -663,20 +663,20 @@ background: linear-gradient(90deg, rgba(119,172,241,1) 0%, rgba(62,219,240,1) 43
 }
 
 .imageForMars {
-    background-image: url("images/mars2.png");
+    background-image: url("../images/mars2.png");
 }
 
 .imageForEarth {
-    background-image: url("images/earth2.png");
+    background-image: url("../images/earth2.png");
 }
 
 .imageForVenus {
-    background-image: url("images/venus2.png");
+    background-image: url("../images/venus2.png");
     background-size: 550px;
 }
 
 .imageForMercury {
-    background-image: url("images/mercury.png");
+    background-image: url("../images/mercury.png");
 }
 
 
